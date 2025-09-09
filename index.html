@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikhakolli Sravan Ventures – Fractional Chief Data Officer | Data Strategy Consultant</title>
+    <meta name="description" content="Unlock growth with AI-powered data strategy. Fractional CDO services designed to scale revenue and cut costs without full-time executive overhead.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="enhanced-effects.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- AI Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="ssv_logo_v1.png" alt="SSV Logo" class="ssv-logo">
+                <span>Sikhakolli Sravan Ventures</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#results" class="nav-link">Results</a>
+                <a href="#contact" class="nav-link cta-button">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse-dot"></span>
+                    Plug-and-Play Analytics Platform
+                </div>
+                <h1 class="hero-title">
+                    Get <span class="gradient-text">Live Dashboards</span><br>
+                    Your Investors Actually Want
+                </h1>
+                <p class="hero-subtitle">
+                    Skip the spreadsheet chaos. Connect your data sources and get MRR, cohorts, CAC/LTV, and burn rate dashboards that close funding rounds.
+                </p>
+            </div>
+            
+            <div class="hero-visual">
+                <!-- Time Comparison Visual -->
+                <div class="time-comparison">
+                    <div class="comparison-item old-way">
+                        <div class="comparison-icon">😰</div>
+                        <div class="comparison-content">
+                            <div class="comparison-title">The Old Way</div>
+                            <div class="comparison-time">6+ Months</div>
+                            <div class="comparison-desc">Hire data team, build infrastructure, create dashboards</div>
+                        </div>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="comparison-item new-way">
+                        <div class="comparison-icon">🚀</div>
+                        <div class="comparison-content">
+                            <div class="comparison-title">SS Ventures</div>
+                            <div class="comparison-time">2 Weeks</div>
+                            <div class="comparison-desc">Plug & play, live dashboards, AI insights included</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Stats and CTAs moved to right column -->
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="14">0</span>
+                        <span class="stat-label">Days to Live Dashboards</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="5">0x</span>
+                        <span class="stat-label">Faster Than In-House</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="80">0</span>
+                        <span class="stat-label">% Less Cost</span>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <button class="cta-primary" onclick="openCalendar()">
+                        <span>Get Your Dashboards in 2 Weeks</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="cta-secondary" onclick="scrollToSection('services')">
+                        <span>See Live Demo</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sample Dashboards Section -->
+    <section class="sample-dashboards">
+        <div class="container">
+            <div class="section-header">
+                <h2>See What You Get: <span class="gradient-text">Live Investor Dashboards</span></h2>
+                <p>Real dashboards that close funding rounds. No more Excel presentations.</p>
+            </div>
+            
+            <div class="dashboards-grid">
+                <!-- Revenue & Growth Dashboard -->
+                <div class="dashboard-preview" data-aos="fade-up">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">
+                            <i class="fas fa-chart-line"></i>
+                            Revenue & Growth
+                        </div>
+                        <div class="live-indicator">● Live</div>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="metric-large">
+                            <span class="metric-value">$847K</span>
+                            <span class="metric-label">ARR</span>
+                            <span class="metric-change positive">↗ 28%</span>
+                        </div>
+                        <div class="metrics-row">
+                            <div class="metric-small">
+                                <span class="value">$47K</span>
+                                <span class="label">MRR</span>
+                            </div>
+                            <div class="metric-small">
+                                <span class="value">$127</span>
+                                <span class="label">ARPU</span>
+                            </div>
+                        </div>
+                        <div class="chart-placeholder">
+                            <div class="chart-bars">
+                                <div class="bar" style="height: 40%"></div>
+                                <div class="bar" style="height: 55%"></div>
+                                <div class="bar" style="height: 70%"></div>
+                                <div class="bar" style="height: 85%"></div>
+                                <div class="bar" style="height: 100%"></div>
+                                <div class="bar" style="height: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cohort & Retention Dashboard -->
+                <div class="dashboard-preview" data-aos="fade-up" data-aos-delay="200">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">
+                            <i class="fas fa-users"></i>
+                            Cohorts & Retention
+                        </div>
+                        <div class="live-indicator">● Live</div>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="metric-large">
+                            <span class="metric-value">73%</span>
+                            <span class="metric-label">12-Month Retention</span>
+                            <span class="metric-change positive">↗ 5%</span>
+                        </div>
+                        <div class="metrics-row">
+                            <div class="metric-small">
+                                <span class="value">$890</span>
+                                <span class="label">LTV</span>
+                            </div>
+                            <div class="metric-small">
+                                <span class="value">4.2%</span>
+                                <span class="label">Churn</span>
+                            </div>
+                        </div>
+                        <div class="cohort-heatmap">
+                            <div class="cohort-row">
+                                <div class="cohort-cell high">95</div>
+                                <div class="cohort-cell high">87</div>
+                                <div class="cohort-cell med">73</div>
+                                <div class="cohort-cell med">68</div>
+                            </div>
+                            <div class="cohort-row">
+                                <div class="cohort-cell high">92</div>
+                                <div class="cohort-cell high">84</div>
+                                <div class="cohort-cell med">71</div>
+                                <div class="cohort-cell med">66</div>
+                            </div>
+                            <div class="cohort-row">
+                                <div class="cohort-cell high">89</div>
+                                <div class="cohort-cell high">81</div>
+                                <div class="cohort-cell med">69</div>
+                                <div class="cohort-cell low">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Investor Dashboard -->
+                <div class="dashboard-preview" data-aos="fade-up" data-aos-delay="400">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">
+                            <i class="fas fa-presentation"></i>
+                            Investor KPIs
+                        </div>
+                        <div class="live-indicator">● Live</div>
+                    </div>
+                    <div class="dashboard-content">
+                        <div class="metric-large">
+                            <span class="metric-value">18</span>
+                            <span class="metric-label">Months Runway</span>
+                            <span class="metric-change neutral">→</span>
+                        </div>
+                        <div class="metrics-row">
+                            <div class="metric-small">
+                                <span class="value">1:7</span>
+                                <span class="label">CAC:LTV</span>
+                            </div>
+                            <div class="metric-small">
+                                <span class="value">$34K</span>
+                                <span class="label">Burn Rate</span>
+                            </div>
+                        </div>
+                        <div class="kpi-summary">
+                            <div class="kpi-item">
+                                <span class="kpi-status green">●</span>
+                                <span class="kpi-text">Unit Economics: Healthy</span>
+                            </div>
+                            <div class="kpi-item">
+                                <span class="kpi-status green">●</span>
+                                <span class="kpi-text">Growth: 28% MoM</span>
+                            </div>
+                            <div class="kpi-item">
+                                <span class="kpi-status yellow">●</span>
+                                <span class="kpi-text">Runway: 18 months</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Analytics Path</h2>
+                <p>Plug-and-play solutions matched to your startup stage</p>
+            </div>
+            <div class="services-grid">
+                <!-- Path 1: Investor-Ready Dashboards -->
+                <div class="service-card featured" data-aos="fade-up">
+                    <div class="path-badge">Path 1</div>
+                    <h3>Investor-Ready Dashboards</h3>
+                    <p class="service-subtitle">Pre-Seed / Seed • Raising soon</p>
+                    <p>Live dashboards instead of spreadsheets. MRR, cohorts, CAC/LTV, burn rate.</p>
+                    
+                    <div class="key-features">
+                        <span class="feature-tag">✓ 2-week delivery</span>
+                        <span class="feature-tag">✓ Stripe + GA4 integration</span>
+                        <span class="feature-tag">✓ Exportable charts</span>
+                    </div>
+                    
+                    <div class="pricing-preview">
+                        <span class="price">₹75k-1.25L setup</span>
+                        <span class="recurring">₹25k-40k/month</span>
+                    </div>
+                </div>
+                
+                <!-- Path 2: Growth Analytics-as-a-Service -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="path-badge">Path 2</div>
+                    <h3>Growth Analytics-as-a-Service</h3>
+                    <p class="service-subtitle">Seed / Series A • Scaling operations</p>
+                    <p>Full data team at 1/5th the cost. Cross-functional dashboards, AI alerts, SLAs.</p>
+                    
+                    <div class="key-features">
+                        <span class="feature-tag">✓ 30-min data freshness</span>
+                        <span class="feature-tag">✓ Multi-department dashboards</span>
+                        <span class="feature-tag">✓ AI anomaly alerts</span>
+                    </div>
+                    
+                    <div class="pricing-preview">
+                        <span class="price">₹1.5L-3L setup</span>
+                        <span class="recurring">₹60k-1.2L/month</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Platform Features -->
+            <div class="platform-features" data-aos="fade-up">
+                <h3>Core Platform (Every Engagement)</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-database"></i>
+                        <h4>Universal Connectors</h4>
+                        <p>Postgres, MySQL, Snowflake, BigQuery, GA4, Stripe, HubSpot, Facebook Ads</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-layer-group"></i>
+                        <h4>Standardized Metrics</h4>
+                        <p>MRR/ARR, ARPU, LTV, CAC, cohort retention, churn, ROAS, conversion rates</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-robot"></i>
+                        <h4>AI Layer</h4>
+                        <p>Auto-discovery, narrative insights, anomaly detection, recommendations</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Enterprise Security</h4>
+                        <p>Read-only access, per-tenant schemas, PII masking, audit logs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Your Fractional CDO -->
+    <section id="experience" class="meet-cdo">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Your <span class="gradient-text">Fractional Chief Data Officer</span></h2>
+                <p>The data leader who turns startup chaos into investor confidence</p>
+            </div>
+            
+            <!-- Hero Profile Section -->
+            <div class="cdo-hero-profile">
+                <div class="profile-left">
+                    <div class="photo-container" data-aos="fade-right">
+                        <div class="photo-placeholder">
+                            <i class="fas fa-user-tie"></i>
+                            <span>Professional Photo</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-stats" data-aos="fade-right" data-aos-delay="100">
+                        <h4><i class="fas fa-chart-line"></i> At a Glance</h4>
+                        <div class="stats-grid">
+                            <div class="quick-stat">
+                                <div class="stat-icon">💰</div>
+                                <div class="stat-info">
+                                    <span class="stat-value">₹500Cr+</span>
+                                    <span class="stat-desc">Revenue Impact</span>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <div class="stat-icon">📈</div>
+                                <div class="stat-info">
+                                    <span class="stat-value">130%</span>
+                                    <span class="stat-desc">Average ROI</span>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <div class="stat-icon">🏢</div>
+                                <div class="stat-info">
+                                    <span class="stat-value">50+</span>
+                                    <span class="stat-desc">Teams Enabled</span>
+                                </div>
+                            </div>
+                            <div class="quick-stat">
+                                <div class="stat-icon">🏆</div>
+                                <div class="stat-info">
+                                    <span class="stat-value">5</span>
+                                    <span class="stat-desc">Industry Awards</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="credential-showcase" data-aos="fade-right" data-aos-delay="200">
+                        <h4><i class="fas fa-medal"></i> Recognition</h4>
+                        <div class="credentials-stack">
+                            <div class="credential-item">
+                                <div class="cred-icon">🏆</div>
+                                <span>Saathi Champion 2025</span>
+                            </div>
+                            <div class="credential-item">
+                                <div class="cred-icon">🎯</div>
+                                <span>OYO Big Impact 2023</span>
+                            </div>
+                            <div class="credential-item">
+                                <div class="cred-icon">⭐</div>
+                                <span>Above & Beyond Q1-Q2</span>
+                            </div>
+                            <div class="credential-item">
+                                <div class="cred-icon">🚀</div>
+                                <span>Go Getter Award 2021</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="profile-right">
+                    <div class="intro-content" data-aos="fade-left">
+                        <div class="name-title">
+                            <h3>Sravan Sikhakolli</h3>
+                            <div class="professional-title">
+                                <span class="title-main">Fractional Chief Data Officer</span>
+                                <div class="experience-badges">
+                                    <span class="exp-badge">Ex-OYO</span>
+                                    <span class="exp-badge">Revenue Expert</span>
+                                    <span class="exp-badge">Startup Advisor</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="value-proposition">
+                            <p class="hero-desc">I've scaled data operations at unicorn startups, delivered 130% ROI on multi-million dollar budgets, and built the analytics infrastructure that helped teams raise successful funding rounds.</p>
+                            <div class="current-highlight">
+                                <div class="highlight-icon">⚡</div>
+                                <div class="highlight-content">
+                                    <strong>Currently leading data transformation at Saathi</strong>
+                                    <p>Serving 5+ teams across India's largest social impact platform, earned "Champion" award for enterprise platform launch</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="key-differentiators">
+                            <h4>Why Choose Fractional Over Full-Time?</h4>
+                            <div class="differentiator-grid">
+                                <div class="diff-item">
+                                    <div class="diff-icon">⚡</div>
+                                    <div class="diff-content">
+                                        <strong>Immediate Impact</strong>
+                                        <span>Start in 2 weeks, not 2+ months</span>
+                                    </div>
+                                </div>
+                                <div class="diff-item">
+                                    <div class="diff-icon">💰</div>
+                                    <div class="diff-content">
+                                        <strong>80% Cost Savings</strong>
+                                        <span>No ₹50L+ salary + equity</span>
+                                    </div>
+                                </div>
+                                <div class="diff-item">
+                                    <div class="diff-icon">🎯</div>
+                                    <div class="diff-content">
+                                        <strong>Battle-Tested</strong>
+                                        <span>Proven at OYO, Saathi scale</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Experience Timeline -->
+            <div class="experience-timeline" data-aos="fade-up">
+                <h3><i class="fas fa-briefcase"></i> Track Record</h3>
+                <div class="timeline-grid">
+                    <div class="timeline-item current">
+                        <div class="timeline-marker">
+                            <div class="marker-dot current"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>Head of Growth Analytics</h4>
+                                <div class="company-period">
+                                    <span class="company">Saathi</span>
+                                    <span class="period">Dec 2024 – Present</span>
+                                </div>
+                            </div>
+                            <p>Enterprise platform serving 5+ teams, 30% metric improvement, "Champion" award for data transformation</p>
+                            <div class="impact-tags">
+                                <span class="tag">Enterprise Scale</span>
+                                <span class="tag">30% Growth</span>
+                                <span class="tag">Award Winner</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>Revenue Manager</h4>
+                                <div class="company-period">
+                                    <span class="company">OYO Hotels</span>
+                                    <span class="period">Jul 2023 – Nov 2024</span>
+                                </div>
+                            </div>
+                            <p>130% ROI on ₹40Cr budget across Asia, US, UK. Led team of 5, reduced partner churn 30%</p>
+                            <div class="impact-tags">
+                                <span class="tag">130% ROI</span>
+                                <span class="tag">₹40Cr Budget</span>
+                                <span class="tag">Global Scale</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>Senior Business Analyst</h4>
+                                <div class="company-period">
+                                    <span class="company">OYO</span>
+                                    <span class="period">Jul 2022 – Jun 2023</span>
+                                </div>
+                            </div>
+                            <p>Built data framework cutting operational costs 80%, improved fraud detection 20%</p>
+                            <div class="impact-tags">
+                                <span class="tag">80% Cost Cut</span>
+                                <span class="tag">Fraud Detection</span>
+                                <span class="tag">Framework Builder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="cdo-cta-section" data-aos="fade-up">
+                <div class="cta-content">
+                    <h3>Ready to Scale Your Data Operations?</h3>
+                    <p>Join companies that achieved 130% ROI and 30% faster growth through proven data strategies</p>
+                    <button class="cta-primary" onclick="openCalendar()">
+                        <span>Work With Me Directly</span>
+                        <i class="fas fa-handshake"></i>
+                    </button>
+                    <div class="cta-note">
+                        <small>📞 Free 15-min strategy call • No commitment required</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- AI Consultation Process -->
+    <section class="consultation-process">
+        <div class="container">
+            <div class="section-header">
+                <h2>How We'll Transform Your Data</h2>
+                <p>From audit to execution — a clear roadmap to ROI</p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step" data-aos="fade-up">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>AI-Powered Assessment</h3>
+                        <p>Comprehensive audit to uncover inefficiencies, hidden opportunities, and growth levers.</p>
+                        <div class="step-deliverables">
+                            <span>Data maturity score</span>
+                            <span>ROI potential map</span>
+                            <span>Tech stack review</span>
+                        </div>
+                    </div>
+                    <div class="step-visual">
+                        <div class="rotating-chart"></div>
+                    </div>
+                </div>
+                
+                <div class="process-step reverse" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Strategic Roadmap</h3>
+                        <p>Tailored action plan integrating AI into your business with clear KPIs and timelines.</p>
+                        <div class="step-deliverables">
+                            <span>90-day quick wins</span>
+                            <span>Long-term strategy</span>
+                            <span>Budget/resource plan</span>
+                        </div>
+                    </div>
+                    <div class="step-visual">
+                        <div class="strategy-nodes"></div>
+                    </div>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3>Implementation & Scale</h3>
+                        <p>Hands-on execution: deploying platforms, automation, and dashboards that scale with your business.</p>
+                        <div class="step-deliverables">
+                            <span>Live dashboards</span>
+                            <span>Automated workflows</span>
+                            <span>Team training</span>
+                        </div>
+                    </div>
+                    <div class="step-visual">
+                        <div class="deployment-animation"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2>Ready to Unlock ROI From Your Data?</h2>
+                    <p>Join companies that achieved 130% ROI and 30% savings through AI-driven strategy.</p>
+                    <div class="urgency-indicator">
+                        <span class="pulse-dot"></span>
+                        Now accepting only 3 new clients per quarter — limited slots for Q4 2025.
+                    </div>
+                </div>
+                <div class="cta-form">
+                    <h3>Book Your Free Strategy Session</h3>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <input type="email" id="email" name="email" placeholder="Work Email" required>
+                        </div>
+                        <input type="text" id="company" name="company" placeholder="Company Name" required>
+                        <select id="challenge" name="challenge" required>
+                            <option value="">What's Your Biggest Data Challenge?</option>
+                            <option value="lack-insights">Lack of insights</option>
+                            <option value="manual-processes">Too many manual processes</option>
+                            <option value="data-silos">Data scattered across systems</option>
+                            <option value="no-roi">Low ROI from data spend</option>
+                            <option value="scaling-issues">Scaling challenges</option>
+                        </select>
+                        <button type="submit" class="cta-submit">
+                            <span>Book Free Session</span>
+                            <i class="fas fa-calendar-check"></i>
+                        </button>
+                    </form>
+                    <div class="form-guarantee">
+                        <i class="fas fa-lock"></i>
+                        <span>No sales pitch. Just actionable insights you can use immediately.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Let's Talk Data Strategy</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>ssikhakolli5@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8466838525</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/sravan-sikhakolli" target="_blank">LinkedIn Profile</a>
+                    </div>
+                </div>
+                <div class="response-time">
+                    <div class="response-badge">
+                        <i class="fas fa-clock"></i>
+                        <span>Typical response time: 2 hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="ssv_logo_v1.png" alt="SSV Logo" class="ssv-logo">
+                    <span>Sikhakolli Sravan Ventures</span>
+                    <p>Fractional Chief Data Officer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#services">Services</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#results">Results</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sikhakolli Sravan Ventures. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta" id="floatingCta">
+        <button onclick="openCalendar()">
+            <i class="fas fa-calendar-check"></i>
+            <span>Book Free Strategy Call</span>
+        </button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

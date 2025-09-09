@@ -1,0 +1,465 @@
+/* Enhanced Effects and Animations */
+
+/* Custom cursor */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #00d4ff;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    mix-blend-mode: difference;
+}
+
+/* Ripple effect */
+.ripple {
+    position: fixed;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%);
+    transform: scale(0);
+    animation: rippleEffect 0.6s linear;
+    pointer-events: none;
+    z-index: 1000;
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 -50px;
+}
+
+@keyframes rippleEffect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Loading animations */
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Glitch effect for AI elements */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glitch::before {
+    animation: glitch-1 0.5s infinite linear alternate-reverse;
+    color: #00d4ff;
+    z-index: -1;
+}
+
+.glitch::after {
+    animation: glitch-2 0.5s infinite linear alternate-reverse;
+    color: #ff6b6b;
+    z-index: -2;
+}
+
+@keyframes glitch-1 {
+    0% {
+        clip-path: inset(40% 0 61% 0);
+        transform: translate(-2px, -1px);
+    }
+    20% {
+        clip-path: inset(92% 0 1% 0);
+        transform: translate(-2px, 1px);
+    }
+    40% {
+        clip-path: inset(43% 0 1% 0);
+        transform: translate(-2px, -1px);
+    }
+    60% {
+        clip-path: inset(25% 0 58% 0);
+        transform: translate(-2px, 1px);
+    }
+    80% {
+        clip-path: inset(54% 0 7% 0);
+        transform: translate(-2px, -1px);
+    }
+    100% {
+        clip-path: inset(58% 0 43% 0);
+        transform: translate(-2px, 1px);
+    }
+}
+
+@keyframes glitch-2 {
+    0% {
+        clip-path: inset(25% 0 58% 0);
+        transform: translate(2px, 1px);
+    }
+    20% {
+        clip-path: inset(54% 0 7% 0);
+        transform: translate(2px, -1px);
+    }
+    40% {
+        clip-path: inset(58% 0 43% 0);
+        transform: translate(2px, 1px);
+    }
+    60% {
+        clip-path: inset(40% 0 61% 0);
+        transform: translate(2px, -1px);
+    }
+    80% {
+        clip-path: inset(92% 0 1% 0);
+        transform: translate(2px, 1px);
+    }
+    100% {
+        clip-path: inset(43% 0 1% 0);
+        transform: translate(2px, -1px);
+    }
+}
+
+/* Hologram effect */
+.hologram {
+    position: relative;
+    background: linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.1) 50%, transparent 70%);
+    background-size: 200% 200%;
+    animation: hologram 3s linear infinite;
+}
+
+.hologram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes hologram {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Matrix rain effect */
+.matrix-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.1;
+}
+
+.matrix-column {
+    position: absolute;
+    top: -100px;
+    color: #00d4ff;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    animation: matrixFall 5s linear infinite;
+}
+
+@keyframes matrixFall {
+    from {
+        top: -100px;
+        opacity: 1;
+    }
+    to {
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+/* Data stream visualization */
+.data-stream {
+    position: relative;
+    overflow: hidden;
+}
+
+.data-stream::before {
+    content: '01001001 01101110 01110100 01100101 01101100 01101100 01101001 01100111 01100101 01101110 01110100';
+    position: absolute;
+    top: 50%;
+    left: -100%;
+    white-space: nowrap;
+    color: rgba(0, 212, 255, 0.3);
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    animation: dataFlow 15s linear infinite;
+    transform: translateY(-50%);
+}
+
+@keyframes dataFlow {
+    from { left: -100%; }
+    to { left: 100%; }
+}
+
+/* Neon glow effect */
+.neon-glow {
+    text-shadow: 
+        0 0 5px #00d4ff,
+        0 0 10px #00d4ff,
+        0 0 20px #00d4ff,
+        0 0 40px #00d4ff;
+    animation: neonFlicker 2s infinite alternate;
+}
+
+@keyframes neonFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 
+            0 0 5px #00d4ff,
+            0 0 10px #00d4ff,
+            0 0 20px #00d4ff,
+            0 0 40px #00d4ff;
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+    }
+}
+
+/* Circuit board pattern */
+.circuit-board {
+    position: relative;
+    background-image: 
+        linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: circuitMove 20s linear infinite;
+}
+
+@keyframes circuitMove {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 20px 20px, 20px 20px; }
+}
+
+/* Scanning line effect */
+.scanner {
+    position: relative;
+    overflow: hidden;
+}
+
+.scanner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+}
+
+/* Particle burst on hover */
+.particle-burst {
+    position: relative;
+}
+
+.particle-burst:hover::before {
+    content: '✦ ✧ ★ ☆ ✦ ✧ ★ ☆';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: #00d4ff;
+    opacity: 0;
+    animation: particleBurst 0.6s ease-out;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+@keyframes particleBurst {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(2);
+    }
+}
+
+/* AI thinking animation */
+.ai-thinking {
+    display: inline-block;
+    position: relative;
+}
+
+.ai-thinking::after {
+    content: '...';
+    animation: thinking 1.5s infinite;
+    color: #00d4ff;
+}
+
+@keyframes thinking {
+    0%, 60% { opacity: 0; }
+    30% { opacity: 1; }
+}
+
+/* Energy wave effect */
+.energy-wave {
+    position: relative;
+    overflow: hidden;
+}
+
+.energy-wave::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 212, 255, 0.2),
+        rgba(0, 212, 255, 0.5),
+        rgba(0, 212, 255, 0.2),
+        transparent
+    );
+    animation: energyWave 2s linear infinite;
+}
+
+@keyframes energyWave {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Fractal background */
+.fractal-bg {
+    background-image: 
+        radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(0, 119, 255, 0.05) 0%, transparent 100%);
+    animation: fractalShift 10s ease-in-out infinite;
+}
+
+@keyframes fractalShift {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(180deg); }
+}
+
+/* Quantum effect */
+.quantum {
+    position: relative;
+}
+
+.quantum::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00d4ff, #0077ff, #ff6b6b, #00d4ff);
+    background-size: 400%;
+    border-radius: inherit;
+    z-index: -1;
+    animation: quantumShift 3s linear infinite;
+    filter: blur(1px);
+}
+
+@keyframes quantumShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Digital rain */
+.digital-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.1;
+}
+
+.rain-drop {
+    position: absolute;
+    color: #00d4ff;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    animation: rainFall linear infinite;
+}
+
+@keyframes rainFall {
+    from {
+        top: -20px;
+        opacity: 1;
+    }
+    to {
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+/* Smooth scrolling enhancement */
+html {
+    scroll-behavior: smooth;
+}
+
+/* High performance animations */
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+}
+
+/* Dark mode optimizations */
+@media (prefers-color-scheme: dark) {
+    .auto-dark {
+        filter: brightness(0.9) contrast(1.1);
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
