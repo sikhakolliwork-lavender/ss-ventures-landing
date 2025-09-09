@@ -27,12 +27,12 @@ html {
         width: 100% !important;
     }
     
-    /* Hero section fixes - Balanced spacing */
+    /* Hero section fixes - Slightly more spacing */
     .hero {
-        padding: 1.5rem 0 6rem 0 !important;
+        padding: 1.5rem 0 8rem 0 !important;
         margin-top: 70px !important;
         min-height: auto !important;
-        margin-bottom: 3rem !important;
+        margin-bottom: 4rem !important;
     }
     
     .hero-container {
@@ -132,12 +132,12 @@ html {
         word-wrap: break-word !important;
     }
     
-    /* CTAs - Balanced spacing to prevent overlap */
+    /* CTAs - Slightly more spacing to prevent overlap */
     .hero-cta {
         flex-direction: column !important;
         gap: 1rem !important;
-        margin: 0 0 6rem 0 !important;
-        padding: 0.5rem 1rem 4rem 1rem !important;
+        margin: 0 0 8rem 0 !important;
+        padding: 0.5rem 1rem 5rem 1rem !important;
     }
     
     .cta-primary, .cta-secondary {
