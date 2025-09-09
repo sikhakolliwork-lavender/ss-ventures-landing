@@ -11,17 +11,201 @@ html {
     max-width: 100vw;
 }
 
-/* DISABLE BROKEN MOBILE RULES - Using mobile-overhaul.css instead */
+/* MOBILE FIXES - High specificity overrides */
 @media (max-width: 768px) {
+    /* Reset problematic constraints */
     body, html {
-        overflow-x: auto !important;
-        max-width: none !important;
-        width: auto !important;
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+        width: 100% !important;
     }
     
-    .container, section, .hero-container, .nav-container {
-        max-width: none !important;
-        overflow-x: auto !important;
+    /* Container fixes */
+    .container {
+        padding: 0 1rem !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    /* Hero section fixes */
+    .hero {
+        padding: 2rem 0 !important;
+        margin-top: 70px !important;
+        min-height: auto !important;
+    }
+    
+    .hero-container {
+        display: block !important;
+        grid-template-columns: none !important;
+        text-align: center !important;
+        gap: 2rem !important;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    /* VS Comparison - Stack vertically */
+    .time-comparison {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin: 2rem 0 !important;
+        padding: 1rem !important;
+    }
+    
+    .vs-divider {
+        order: 2 !important;
+        margin: 0.5rem 0 !important;
+        font-size: 0.8rem !important;
+    }
+    
+    /* Stats and CTAs */
+    .hero-stats {
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .hero-cta {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .cta-primary, .cta-secondary {
+        width: 100% !important;
+        max-width: 280px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Section fixes */
+    section {
+        padding: 3rem 0 !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .section-header h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    /* Dashboards */
+    .dashboards-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .service-card {
+        padding: 2rem 1.5rem !important;
+        margin-bottom: 1rem !important;
+        position: relative !important;
+    }
+    
+    /* Disable problematic pseudo-elements */
+    .service-card::before,
+    .service-card::after,
+    .timeline-marker::before,
+    .timeline-marker::after {
+        display: none !important;
+    }
+    
+    .service-badge {
+        position: static !important;
+        top: auto !important;
+        right: auto !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    /* CDO Section */
+    .cdo-hero-profile {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center !important;
+    }
+    
+    .profile-left {
+        order: 2 !important;
+    }
+    
+    .profile-right {
+        order: 1 !important;
+    }
+    
+    .photo-placeholder {
+        width: 180px !important;
+        height: 220px !important;
+        margin: 0 auto !important;
+    }
+    
+    .quick-stats {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    /* Timeline fixes */
+    .timeline::before {
+        display: none !important;
+    }
+    
+    .timeline-item {
+        position: static !important;
+        left: auto !important;
+        right: auto !important;
+        text-align: left !important;
+        width: 100% !important;
+        margin-bottom: 3rem !important;
+        display: block !important;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: auto !important;
+        right: auto !important;
+        text-align: left !important;
+    }
+    
+    .timeline-content {
+        padding: 1.5rem !important;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        margin-left: 0 !important;
+    }
+    
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        gap: 2rem !important;
+    }
+    
+    .footer-links {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    /* Disable floating elements that cause overlap */
+    .floating-cta {
+        display: none !important;
+    }
+    
+    /* Navigation adjustments */
+    .nav-logo span {
+        font-size: 0.9rem !important;
+    }
+    
+    .ssv-logo {
+        height: 40px !important;
     }
 }
 
