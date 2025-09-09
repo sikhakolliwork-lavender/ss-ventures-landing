@@ -11,6 +11,20 @@ html {
     max-width: 100vw;
 }
 
+/* DISABLE BROKEN MOBILE RULES - Using mobile-overhaul.css instead */
+@media (max-width: 768px) {
+    body, html {
+        overflow-x: auto !important;
+        max-width: none !important;
+        width: auto !important;
+    }
+    
+    .container, section, .hero-container, .nav-container {
+        max-width: none !important;
+        overflow-x: auto !important;
+    }
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
