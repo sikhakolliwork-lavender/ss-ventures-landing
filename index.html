@@ -38,11 +38,14 @@
         
         <!-- Mobile Menu Overlay -->
         <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-close" onclick="closeMobileMenu()">
+                <i class="fas fa-times"></i>
+            </div>
             <div class="mobile-menu-items">
-                <a href="#services" class="mobile-menu-item" onclick="closeMobileMenu()">Services</a>
-                <a href="#experience" class="mobile-menu-item" onclick="closeMobileMenu()">Experience</a>
-                <a href="#results" class="mobile-menu-item" onclick="closeMobileMenu()">Results</a>
-                <a href="#contact" class="mobile-menu-item" onclick="closeMobileMenu()">Get Started</a>
+                <a href="#services" class="mobile-menu-item" onclick="handleMobileMenuClick(event, '#services')">Services</a>
+                <a href="#experience" class="mobile-menu-item" onclick="handleMobileMenuClick(event, '#experience')">Experience</a>
+                <a href="#results" class="mobile-menu-item" onclick="handleMobileMenuClick(event, '#results')">Results</a>
+                <a href="#contact" class="mobile-menu-item" onclick="handleMobileMenuClick(event, '#contact')">Get Started</a>
             </div>
         </div>
     </nav>

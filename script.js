@@ -1,12 +1,39 @@
 // Mobile hamburger menu functions
 function toggleMobileMenu() {
+    console.log('Toggle mobile menu called');
     const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenu.classList.toggle('open');
+    if (mobileMenu) {
+        mobileMenu.classList.toggle('open');
+        // Prevent body scroll when menu is open
+        if (mobileMenu.classList.contains('open')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }
 }
 
 function closeMobileMenu() {
+    console.log('Close mobile menu called');
     const mobileMenu = document.getElementById('mobileMenu');
-    mobileMenu.classList.remove('open');
+    if (mobileMenu) {
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Handle mobile menu item clicks with smooth scrolling
+function handleMobileMenuClick(event, target) {
+    event.preventDefault();
+    closeMobileMenu();
+    
+    // Smooth scroll to section after menu closes
+    setTimeout(() => {
+        const section = document.querySelector(target);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    }, 300);
 }
 
 // Close mobile menu when clicking outside
