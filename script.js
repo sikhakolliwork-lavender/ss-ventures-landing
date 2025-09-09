@@ -1,3 +1,26 @@
+// Mobile hamburger menu functions
+function toggleMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.toggle('open');
+}
+
+function closeMobileMenu() {
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.classList.remove('open');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const mobileMenu = document.getElementById('mobileMenu');
+    const hamburger = document.querySelector('.hamburger-menu');
+    
+    if (mobileMenu && hamburger && mobileMenu.classList.contains('open')) {
+        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+            closeMobileMenu();
+        }
+    }
+});
+
 // Initialize particles background
 document.addEventListener('DOMContentLoaded', function() {
     if (typeof particlesJS !== 'undefined') {
