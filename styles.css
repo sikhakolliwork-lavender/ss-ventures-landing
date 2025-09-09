@@ -27,12 +27,12 @@ html {
         width: 100% !important;
     }
     
-    /* Hero section fixes - Massive bottom buffer */
+    /* Hero section fixes - Extreme bottom buffer */
     .hero {
-        padding: 1.5rem 0 12rem 0 !important;
+        padding: 1.5rem 0 20rem 0 !important;
         margin-top: 70px !important;
         min-height: auto !important;
-        margin-bottom: 0 !important;
+        margin-bottom: 10rem !important;
     }
     
     .hero-container {
@@ -132,12 +132,12 @@ html {
         word-wrap: break-word !important;
     }
     
-    /* CTAs - Zero top spacing, massive bottom buffer */
+    /* CTAs - Zero top spacing, extreme bottom buffer */
     .hero-cta {
         flex-direction: column !important;
         gap: 1rem !important;
-        margin: 0 0 12rem 0 !important;
-        padding: 0.5rem !important;
+        margin: 0 0 20rem 0 !important;
+        padding: 0.5rem 1rem 20rem 1rem !important;
     }
     
     .cta-primary, .cta-secondary {
@@ -161,12 +161,13 @@ html {
         font-size: 1.8rem !important;
     }
     
-    /* Dashboards - Prevent overlap with hero CTAs */
+    /* Dashboards - Extreme separation to prevent overlap */
     .dashboards {
-        margin-top: 8rem !important;
-        padding-top: 4rem !important;
+        margin-top: 15rem !important;
+        padding-top: 8rem !important;
         position: relative !important;
         z-index: 1 !important;
+        background: #0a0a0a !important;
     }
     
     .dashboards-grid {
