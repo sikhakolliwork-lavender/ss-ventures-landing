@@ -2178,8 +2178,8 @@ body {
         overflow-x: hidden;
     }
     
-    /* Prevent horizontal overflow on all elements */
-    * {
+    /* Prevent horizontal overflow on container elements only */
+    .container, section, .hero-container, .nav-container {
         max-width: 100%;
         overflow-x: hidden;
     }
@@ -2194,31 +2194,23 @@ body {
     .nav-container {
         padding: 0 1rem;
         max-width: 100%;
-        width: 100%;
     }
     
     .nav-logo {
-        font-size: 1rem;
-        gap: 0.25rem;
-        max-width: 60%;
-        overflow: hidden;
+        font-size: 0.95rem;
+        max-width: 65%;
     }
     
     .nav-logo span {
-        font-size: 0.9rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        display: none; /* Hide text on mobile, show only logo */
     }
     
     .ssv-logo {
-        height: 35px;
-        flex-shrink: 0;
+        height: 40px;
     }
     
     .nav-menu {
-        font-size: 0.85rem;
-        gap: 1rem;
+        font-size: 0.9rem;
     }
     
     /* Section Padding */
@@ -2232,10 +2224,9 @@ body {
     
     /* Typography */
     .hero-title {
-        font-size: 1.9rem;
-        line-height: 1.15;
-        word-break: break-word;
-        hyphens: auto;
+        font-size: 2.2rem;
+        line-height: 1.2;
+        word-wrap: break-word;
         max-width: 100%;
     }
     
@@ -2292,13 +2283,13 @@ body {
     }
     
     .comparison-title, .comparison-time {
-        font-size: 0.9rem;
-        word-break: break-word;
+        font-size: 1rem;
+        word-wrap: break-word;
     }
     
     .comparison-desc {
-        font-size: 0.7rem;
-        word-break: break-word;
+        font-size: 0.85rem;
+        word-wrap: break-word;
         line-height: 1.4;
     }
     
@@ -2400,13 +2391,14 @@ body {
         height: auto !important;
     }
     
-    /* Fix positioning elements */
-    .floating-dashboard, .dashboard-preview, .service-card {
-        max-width: 100% !important;
-        left: auto !important;
-        right: auto !important;
-        transform: none !important;
-        position: relative !important;
+    /* Fix wide elements that cause overflow */
+    .floating-dashboard, .dashboard-preview {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    
+    .service-card {
+        max-width: 100%;
     }
     
     .timeline-marker::after {
