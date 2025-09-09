@@ -1,6 +1,9 @@
-# Fractional CDO Landing Page
+# SS Ventures Landing Page
 
-A high-converting, AI-powered landing page for Sravan Sikhakolli's data analytics consultancy. Built with modern web technologies and designed to showcase expertise in data analytics, revenue optimization, and business intelligence.
+A high-converting landing page for SS Ventures' fractional Chief Data Officer services. Built with modern web technologies and designed to convert startup founders who need investor-ready dashboards in 2 weeks instead of 6+ months.
+
+**Live Website**: https://sikhakollisravanventures.com  
+**GitHub Pages**: https://sikhakolliwork-lavender.github.io/ss-ventures-landing/
 
 ## 🚀 Features
 
@@ -37,11 +40,15 @@ A high-converting, AI-powered landing page for Sravan Sikhakolli's data analytic
 
 ```
 /
-├── landing-page.html          # Main HTML file
-├── styles.css                 # Core styling and layout
-├── enhanced-effects.css       # Advanced animations and effects
-├── script.js                  # Interactive functionality
-└── README.md                  # This documentation
+├── index.html               # Main HTML file (renamed from landing-page.html)
+├── styles.css              # Core styling and layout (40KB+)
+├── enhanced-effects.css    # Advanced animations and effects (9KB)
+├── script.js               # Interactive functionality (15KB)
+├── ssv_logo_v1.png         # SS Ventures brand logo (1.4MB)
+├── CNAME                   # Custom domain configuration for GitHub Pages
+├── README.md               # This documentation
+├── PROJECT-STATUS.md       # Development status and changelog
+└── .gitignore             # Git ignore rules
 ```
 
 ## 🛠 Setup Instructions
