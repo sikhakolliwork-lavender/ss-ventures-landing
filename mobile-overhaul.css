@@ -173,12 +173,19 @@ html, body {
     
     /* Partnership section styling handled in main styles.css */
     
-    /* Sections - Ensure proper spacing to prevent overlap */
+    /* Sections - CRITICAL: Prevent sections from overlapping during mobile scroll */
     section {
-        padding: 3rem 0;
-        margin-bottom: 2rem;
+        padding: 3rem 0; /* Standard section padding */
+        margin-bottom: 2rem; /* Separation between sections */
         position: relative;
-        z-index: 1;
+        z-index: 1; /* Ensure proper stacking order */
+    }
+    
+    /* CRITICAL: First section after hero needs extra top margin to prevent CTA overlap */
+    .sample-dashboards {
+        margin-top: 4rem !important; /* Extra spacing from hero section to prevent CTA coverage */
+        position: relative !important;
+        z-index: 2 !important; /* Higher z-index to stay above hero */
     }
     
     .section-header {
