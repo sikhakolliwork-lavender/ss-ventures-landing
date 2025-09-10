@@ -383,9 +383,84 @@ html {
         gap: 2rem !important;
     }
     
+    .footer-brand {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1rem !important;
+    }
+    
     .footer-links {
         flex-direction: column !important;
+        gap: 2rem !important;
+        align-items: center !important;
+    }
+    
+    .footer-section {
+        text-align: center !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .footer-section h4 {
+        margin-bottom: 1rem !important;
+        font-size: 1.1rem !important;
+    }
+    
+    .footer-section ul {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        list-style: none !important;
+        padding: 0 !important;
+    }
+    
+    .footer-social {
+        justify-content: center !important;
+        margin-top: 1.5rem !important;
+    }
+    
+    /* About Page Mobile Spacing */
+    .about-hero {
+        padding: 4rem 0 2rem 0 !important;
+    }
+    
+    .hero-header {
+        margin-bottom: 2rem !important;
+    }
+    
+    .professional-story,
+    .achievement-overview,
+    .professional-timeline {
+        padding: 2rem 0 !important;
+    }
+    
+    .about-cta {
+        padding: 2rem 0 3rem 0 !important;
+    }
+    
+    .story-intro {
+        margin-bottom: 2rem !important;
+    }
+    
+    .story-highlight {
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .current-highlight {
+        margin-bottom: 2rem !important;
+        padding: 1.5rem !important;
+    }
+    
+    .stats-showcase {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+    
+    .differentiator-grid {
         gap: 1rem !important;
+    }
+    
+    .timeline-header {
+        margin-bottom: 1.5rem !important;
     }
     
     /* Disable floating elements that cause overlap */
@@ -2940,7 +3015,7 @@ div[class*="platform"] {
 
 /* About Page Styles */
 .about-hero {
-    padding: 8rem 0 4rem 0;
+    padding: 6rem 0 3rem 0;
     background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(0, 0, 20, 0.9));
     position: relative;
     z-index: 1;
@@ -2953,7 +3028,7 @@ div[class*="platform"] {
 
 .hero-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 .hero-header h1 {
@@ -2969,25 +3044,79 @@ div[class*="platform"] {
     line-height: 1.5;
 }
 
-.professional-story,
-.achievement-overview,
-.professional-timeline,
-.about-cta {
-    padding: 2rem 0;
+/* Consistent section spacing */
+.professional-story {
+    padding: 3rem 0;
     position: relative;
     z-index: 1;
 }
 
+.achievement-overview {
+    padding: 2.5rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.professional-timeline {
+    padding: 3rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.about-cta {
+    padding: 3rem 0 4rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.story-intro {
+    margin-bottom: 3rem;
+}
+
 .story-intro h2 {
     font-size: 2.2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #fff;
+}
+
+.story-highlight {
+    margin-bottom: 2.5rem;
 }
 
 .story-highlight .lead {
     font-size: 1.2rem;
     color: #d1dce6;
     line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.current-highlight {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: rgba(0, 212, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.value-proposition {
+    margin-top: 2rem;
+}
+
+.differentiator-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.stats-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.timeline-header {
     margin-bottom: 2rem;
 }
 
