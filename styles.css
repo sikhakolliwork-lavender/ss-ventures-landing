@@ -3167,6 +3167,10 @@ div[class*="platform"] {
         font-size: 0.9rem !important;
     }
 
+    .experience-badges {
+        justify-content: center !important;
+    }
+
 
     .cta-primary-hero {
         padding: 1.25rem 2rem !important;
