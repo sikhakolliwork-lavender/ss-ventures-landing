@@ -179,9 +179,13 @@ html, body {
         visibility: visible !important; /* Force visibility */
         opacity: 1 !important; /* Force opacity */
         position: relative !important; /* Ensure proper positioning */
-        z-index: 10 !important; /* Bring to front */
+        z-index: 999 !important; /* Very high z-index */
         width: 100% !important; /* Full width */
         max-width: none !important; /* Remove any width restrictions */
+        background: #ff0000 !important; /* BRIGHT RED for debugging */
+        border: 5px solid #00ff00 !important; /* BRIGHT GREEN border */
+        padding: 2rem !important; /* Large padding */
+        font-size: 1.5rem !important; /* Large text */
     }
     
     /* Ensure equity badge is visible on mobile */
