@@ -2973,7 +2973,7 @@ div[class*="platform"] {
 .achievement-overview,
 .professional-timeline,
 .about-cta {
-    padding: 4rem 0;
+    padding: 2rem 0;
     position: relative;
     z-index: 1;
 }
@@ -3098,6 +3098,30 @@ div[class*="platform"] {
 .footer-bottom p {
     color: #b3c7d9;
     font-size: 0.875rem;
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-link {
+    color: #d1dce6;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-link:hover {
+    color: #00d4ff;
 }
 
 /* Responsive Design */
