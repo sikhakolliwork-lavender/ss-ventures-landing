@@ -193,7 +193,7 @@ html, body {
     
     /* Specific section spacing */
     .hero {
-        margin-bottom: 3rem;
+        margin-bottom: 0; /* Remove large spacing from hero itself */
     }
     
     .dashboards {
