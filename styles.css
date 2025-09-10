@@ -1908,6 +1908,27 @@ div[class*="platform"] {
     font-weight: 500;
 }
 
+/* Partnership Mode Section */
+.partnership-mode-section {
+    padding: 2rem 0;
+    background: rgba(0, 10, 15, 0.8);
+}
+
+/* Mobile specific for partnership section */
+@media (max-width: 640px) {
+    .partnership-mode-section {
+        padding: 1rem 0;
+    }
+    
+    .partnership-mode-section .hero-equity-highlight {
+        margin: 0 auto;
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(255, 107, 107, 0.08)) !important;
+        border: 1px solid rgba(0, 212, 255, 0.2) !important;
+        padding: 1.5rem !important;
+        font-size: 1rem !important;
+    }
+}
+
 /* Key Features */
 .key-features {
     display: flex;
