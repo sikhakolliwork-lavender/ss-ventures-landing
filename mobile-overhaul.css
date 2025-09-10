@@ -145,7 +145,7 @@ html, body {
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem; /* Reduced from 2rem */
     }
     
     .stat-item {
@@ -159,6 +159,8 @@ html, body {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
+        margin-top: 1rem !important; /* Override main CSS 2rem with 1rem */
+        margin-bottom: 0; /* Remove any bottom margin */
     }
     
     .cta-primary,
@@ -167,6 +169,12 @@ html, body {
         max-width: 280px;
         padding: 0.875rem 1.5rem;
         font-size: 0.9rem;
+    }
+    
+    /* Hero Equity Highlight - Mobile Spacing */
+    .hero-equity-highlight {
+        margin-top: 1rem !important; /* Reduced from 1.5rem */
+        margin-bottom: 3rem !important; /* Ensure spacing after for smooth scroll */
     }
     
     /* Sections - Ensure proper spacing to prevent overlap */
