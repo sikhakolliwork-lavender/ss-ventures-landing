@@ -174,8 +174,8 @@ html {
         background: #0a0a0a !important;
     }
     
-    /* Mobile Dashboard Carousel */
-    .dashboards-grid {
+    /* Mobile Dashboard Carousel - High specificity */
+    body .dashboards-grid {
         display: flex !important;
         flex-direction: row !important;
         overflow-x: auto !important;
@@ -184,6 +184,7 @@ html {
         padding: 0 1rem 1rem 1rem !important;
         scroll-snap-type: x mandatory !important;
         -webkit-overflow-scrolling: touch !important;
+        grid-template-columns: none !important;
     }
     
     /* Hide scrollbar but keep functionality */
@@ -196,8 +197,8 @@ html {
         scrollbar-width: none !important;
     }
     
-    /* Dashboard carousel cards */
-    .dashboard-preview {
+    /* Dashboard carousel cards - High specificity */
+    body .dashboard-preview {
         position: relative !important;
         display: flex !important;
         flex-direction: column !important;
@@ -305,6 +306,40 @@ html {
         width: 180px !important;
         height: 220px !important;
         margin: 0 auto !important;
+    }
+    
+    .profile-photo {
+        width: 180px !important;
+        height: 220px !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Profile Header Mobile */
+    .profile-header {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 1.5rem !important;
+        padding: 1rem !important;
+    }
+    
+    .profile-header .profile-photo {
+        width: 140px !important;
+        height: 170px !important;
+    }
+    
+    .name-title-section h3 {
+        font-size: 1.8rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .professional-tagline .tagline-main {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .profile-content {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
     }
     
     .quick-stats {
@@ -493,6 +528,34 @@ body {
     background: #0a0a0a;
     width: 100%;
     max-width: 100vw;
+}
+
+/* Global section fixes for desktop internal scrolling */
+section {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+}
+
+.container {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+}
+
+/* Comprehensive fix for all grid and flex containers to prevent internal scrolling */
+/* Exclude carousel grids from this fix */
+div[class*="grid"]:not(.dashboards-grid):not(.services-grid), 
+div[class*="container"]:not(.dashboards-grid):not(.services-grid),
+div[class*="profile"],
+div[class*="stats"],
+div[class*="features"],
+div[class*="timeline"],
+div[class*="process"],
+div[class*="platform"] {
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
 }
 
 .container {
@@ -1178,6 +1241,8 @@ body {
     backdrop-filter: blur(10px);
     position: relative;
     z-index: 1;
+    overflow: visible;
+    height: auto;
 }
 
 .section-header {
@@ -1195,6 +1260,11 @@ body {
 .section-header p {
     font-size: 1.125rem;
     color: #999;
+}
+
+/* Hide mobile swipe hint on desktop */
+.mobile-swipe-hint {
+    display: none;
 }
 
 .services-grid {
@@ -1785,15 +1855,73 @@ body {
     position: relative;
     z-index: 1;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
 }
 
 /* Hero Profile Section */
 .cdo-hero-profile {
+    margin-bottom: 4rem;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+}
+
+/* Photo and Name Header - Side by Side */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+}
+
+.profile-header .photo-container {
+    flex-shrink: 0;
+}
+
+.profile-header .profile-photo {
+    width: 120px;
+    height: 150px;
+}
+
+.name-title-section {
+    flex: 1;
+    min-width: 0; /* Allows text to wrap properly */
+}
+
+.name-title-section h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2;
+}
+
+.professional-tagline .tagline-main {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: #00d4ff;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    display: block;
+    line-height: 1.3;
+}
+
+/* Profile Content Grid */
+.profile-content {
     display: grid;
-    grid-template-columns: 400px 1fr;
+    grid-template-columns: 35% 1fr;
     gap: 4rem;
     align-items: start;
-    margin-bottom: 4rem;
+    min-height: 400px;
 }
 
 /* Profile Left Column */
@@ -1832,6 +1960,24 @@ body {
     font-size: 2rem;
     margin-bottom: 0.5rem;
     opacity: 0.6;
+}
+
+/* Profile Photo Styles */
+.profile-photo {
+    width: 250px;
+    height: 300px;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.profile-photo:hover {
+    border-color: #00d4ff;
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.2);
+    transform: translateY(-5px);
 }
 
 /* Quick Stats */
@@ -1904,57 +2050,102 @@ body {
 
 /* Credential Showcase */
 .credential-showcase {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 15px;
-    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(0, 212, 255, 0.02));
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.credential-showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00d4ff, #0077ff, #00d4ff);
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { background-position: 200% 0; }
+    50% { background-position: -200% 0; }
 }
 
 .credential-showcase h4 {
     color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .credential-showcase h4 i {
     color: #00d4ff;
+    font-size: 1.3rem;
 }
 
 .credentials-stack {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .credential-item {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem;
-    background: rgba(0, 212, 255, 0.05);
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(0, 119, 255, 0.04));
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.credential-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #00d4ff, #0077ff);
+    border-radius: 0 4px 4px 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .credential-item:hover {
-    transform: translateX(5px);
-    background: rgba(0, 212, 255, 0.1);
+    transform: translateX(8px) translateY(-2px);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 119, 255, 0.08));
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.15);
+}
+
+.credential-item:hover::after {
+    opacity: 1;
 }
 
 .cred-icon {
-    font-size: 1.25rem;
-    min-width: 30px;
+    font-size: 1.4rem;
+    min-width: 35px;
     text-align: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 .credential-item span {
-    color: #ccc;
-    font-size: 0.9rem;
-    font-weight: 500;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Profile Right Column */
@@ -2469,6 +2660,9 @@ body {
 .contact {
     padding: 4rem 0;
     background: rgba(0, 0, 0, 0.3);
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
 }
 
 .contact-grid {
@@ -2476,6 +2670,9 @@ body {
     grid-template-columns: 1fr auto;
     gap: 3rem;
     align-items: center;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
 }
 
 .contact-info h3 {
@@ -2805,16 +3002,71 @@ body {
         gap: 1rem;
     }
     
-    /* CDO Profile Mobile */
+    /* CDO Profile Mobile - Photo First Layout */
     .cdo-hero-profile {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         gap: 2rem;
+        text-align: center;
+    }
+
+    .profile-header {
+        order: 1;
+        margin-bottom: 2rem;
+    }
+    
+    .profile-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        order: 2;
     }
     
     .profile-left {
         order: 2;
+        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .profile-right {
+        order: 1;
+    }
+
+    /* Single Column Stats for Mobile */
+    .stats-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .quick-stat {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: rgba(0, 212, 255, 0.05);
+        border: 1px solid rgba(0, 212, 255, 0.1);
+        border-radius: 12px;
+        text-align: left;
+    }
+
+    /* Enhanced Mobile CTA */
+    .cdo-cta-section {
+        margin-top: 3rem;
+        padding: 2rem 1rem;
+        background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(0, 119, 255, 0.04));
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .cdo-cta-section .cta-primary {
+        width: 100%;
+        padding: 1.25rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-top: 1.5rem;
     }
     
     .profile-right {
@@ -2824,6 +3076,36 @@ body {
     .photo-placeholder {
         width: 200px;
         height: 250px;
+    }
+    
+    .profile-photo {
+        width: 200px;
+        height: 250px;
+    }
+    
+    /* Profile Header Tablet */
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .profile-header .profile-photo {
+        width: 120px;
+        height: 150px;
+    }
+    
+    .name-title-section h3 {
+        font-size: 2rem;
+    }
+    
+    .professional-tagline .tagline-main {
+        font-size: 1rem;
+    }
+    
+    .profile-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
     
     .name-title h3 {
@@ -2911,18 +3193,41 @@ body {
         padding: 0.2rem 0.5rem;
     }
     
-    /* Services Grid Mobile */
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    /* Services Grid Mobile - Carousel - High specificity */
+    body .services-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        gap: 1.5rem !important;
+        padding: 0 1rem 1rem 1rem !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
+        grid-template-columns: none !important;
     }
     
-    .service-card {
+    body .service-card {
         padding: 1.5rem 1rem;
+        flex: 0 0 85% !important;
+        max-width: 320px !important;
+        min-width: 280px !important;
+        scroll-snap-align: center !important;
+        height: auto !important;
+        overflow: visible !important;
     }
     
     .service-card h3 {
         font-size: 1.3rem;
+    }
+    
+    /* Mobile swipe hint for services */
+    .mobile-swipe-hint {
+        display: block !important;
+        color: #00d4ff !important;
+        font-size: 0.875rem !important;
+        margin-top: 0.5rem !important;
+        font-weight: 500 !important;
+        text-align: center !important;
     }
     
     .key-features {
@@ -2971,14 +3276,72 @@ body {
     }
     
     /* CTA Section Mobile */
+    .final-cta {
+        padding: 3rem 0 !important;
+        overflow-x: hidden !important;
+    }
+    
     .cta-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        text-align: center !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        padding: 0 1rem !important;
+    }
+    
+    .cta-text {
+        max-width: 100% !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+    }
+    
+    .cta-text h2 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1rem !important;
+        word-wrap: break-word !important;
+        hyphens: auto !important;
+    }
+    
+    .cta-text p {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.5rem !important;
+    }
+    
+    .urgency-indicator {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        font-size: 0.875rem !important;
+        text-align: center !important;
+    }
+    
+    .cta-form {
+        padding: 1.5rem !important;
+        max-width: 100% !important;
+        margin: 0 !important;
     }
     
     .form-row {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+    
+    .contact-form input,
+    .contact-form select {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 1rem !important;
+        padding: 0.875rem !important;
+        box-sizing: border-box !important;
+    }
+    
+    .cta-submit {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 1rem !important;
+        padding: 0.875rem 1.5rem !important;
     }
     
     .form-group input,
@@ -3072,6 +3435,25 @@ body {
     .photo-placeholder {
         width: 160px;
         height: 200px;
+    }
+    
+    .profile-photo {
+        width: 160px;
+        height: 200px;
+    }
+    
+    /* Profile Header Small Mobile */
+    .profile-header .profile-photo {
+        width: 100px;
+        height: 130px;
+    }
+    
+    .name-title-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .professional-tagline .tagline-main {
+        font-size: 0.9rem;
     }
     
     .service-card {
