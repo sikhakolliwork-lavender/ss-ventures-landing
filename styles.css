@@ -380,18 +380,18 @@ html {
     .footer-content {
         grid-template-columns: 1fr !important;
         text-align: center !important;
-        gap: 2rem !important;
+        gap: 1.5rem !important;
     }
     
     .footer-brand {
         flex-direction: column !important;
         text-align: center !important;
-        gap: 1rem !important;
+        gap: 0.5rem !important;
     }
     
     .footer-links {
         flex-direction: column !important;
-        gap: 2rem !important;
+        gap: 1.5rem !important;
         align-items: center !important;
     }
     
@@ -415,7 +415,57 @@ html {
     
     .footer-social {
         justify-content: center !important;
-        margin-top: 1.5rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    /* Mobile Footer Optimizations */
+    .footer-logo {
+        height: 35px !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .footer-brand h4 {
+        font-size: 1rem !important;
+        margin-bottom: 0.25rem !important;
+    }
+    
+    .footer-brand p {
+        font-size: 0.75rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .footer-links {
+        gap: 1.5rem !important;
+    }
+    
+    .footer-section {
+        margin-bottom: 1rem !important;
+    }
+    
+    .footer-section h4 {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .footer-section ul {
+        gap: 0.5rem !important;
+    }
+    
+    .footer-section a {
+        font-size: 0.8rem !important;
+    }
+    
+    .footer-bottom {
+        padding-top: 1rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.75rem !important;
+    }
+    
+    .social-link {
+        font-size: 1rem !important;
     }
     
     /* About Page Mobile Spacing */
