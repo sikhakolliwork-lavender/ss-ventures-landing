@@ -71,7 +71,7 @@ html, body {
     /* Hero Section */
     .hero {
         padding: 2rem 0;
-        min-height: 70vh;
+        min-height: auto; /* Remove fixed height that might cut off content */
     }
     
     .hero-container {
@@ -175,6 +175,28 @@ html, body {
     .hero-equity-highlight {
         margin-top: 1rem !important; /* Reduced from 1.5rem */
         margin-bottom: 3rem !important; /* Ensure spacing after for smooth scroll */
+        display: block !important; /* Force display */
+        visibility: visible !important; /* Force visibility */
+        opacity: 1 !important; /* Force opacity */
+        position: relative !important; /* Ensure proper positioning */
+        z-index: 10 !important; /* Bring to front */
+        width: 100% !important; /* Full width */
+        max-width: none !important; /* Remove any width restrictions */
+    }
+    
+    /* Ensure equity badge is visible on mobile */
+    .equity-badge {
+        display: inline-flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Ensure equity text is visible on mobile */
+    .equity-text {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: #d1dce6 !important;
     }
     
     /* Sections - Ensure proper spacing to prevent overlap */
