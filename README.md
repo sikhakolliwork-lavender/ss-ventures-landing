@@ -17,6 +17,7 @@ A high-converting landing page for SS Ventures' fractional Chief Data Officer se
 - **Particle Background** for visual appeal (optimized for mobile performance)
 - **Glassmorphism Effects** with backdrop blur
 - **3D Hover Effects** on cards and interactive elements
+- **Equity Partnership UI** with handshake icons and trust-building animations
 
 ### AI & Tech Elements
 - **Neural Network Animations** in the hero section
@@ -32,12 +33,21 @@ A high-converting landing page for SS Ventures' fractional Chief Data Officer se
 - **Multiple CTAs** strategically placed throughout the page
 - **Contact Form** with validation and success states
 - **Progressive Information Disclosure** to build trust
+- **Equity Partnership Messaging** to differentiate from pure service providers
+- **Trust-Building Elements** emphasizing aligned incentives and shared success
 
 ### Performance
 - **Optimized Assets** with lazy loading
 - **Debounced Scroll Handlers** for smooth performance
 - **GPU-Accelerated Animations** using CSS transforms
 - **Reduced Motion Support** for accessibility
+
+### Equity Partnership Features
+- **Hero Section Highlight** with "Partnership Mode Available" badge
+- **Service Pricing Integration** showing equity + cash options for both paths
+- **Dedicated Partnership Section** explaining aligned incentives and shared success
+- **Trust-Building Messaging** emphasizing investment approach over pure service
+- **Professional Animations** with shimmer effects and glassmorphism styling
 
 ## 📁 File Structure
 
