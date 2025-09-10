@@ -174,25 +174,46 @@ html {
         background: #0a0a0a !important;
     }
     
+    /* Mobile Dashboard Carousel */
     .dashboards-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem !important;
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        gap: 1.5rem !important;
+        padding: 0 1rem 1rem 1rem !important;
+        scroll-snap-type: x mandatory !important;
+        -webkit-overflow-scrolling: touch !important;
     }
     
-    /* Fix dashboard card overlapping content */
+    /* Hide scrollbar but keep functionality */
+    .dashboards-grid::-webkit-scrollbar {
+        display: none !important;
+    }
+    
+    .dashboards-grid {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+    }
+    
+    /* Dashboard carousel cards */
     .dashboard-preview {
         position: relative !important;
         display: flex !important;
         flex-direction: column !important;
-        padding: 2rem 1.5rem !important;
-        margin: 0 0 2rem 0 !important;
+        flex: 0 0 85% !important;
+        width: 85% !important;
+        max-width: 320px !important;
+        padding: 1.5rem !important;
+        margin: 0 !important;
         background: rgba(255, 255, 255, 0.03) !important;
         border-radius: 16px !important;
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
         overflow: visible !important;
-        min-height: auto !important;
+        min-height: 280px !important;
         height: auto !important;
         max-height: none !important;
+        scroll-snap-align: center !important;
     }
     
     .dashboard-preview * {
@@ -220,6 +241,22 @@ html {
         flex-direction: column !important;
         gap: 1rem !important;
         width: 100% !important;
+    }
+    
+    /* Add scroll hint for carousel */
+    .dashboards-grid::after {
+        content: "← Swipe to see more →" !important;
+        position: absolute !important;
+        bottom: -2rem !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 0.8rem !important;
+        color: rgba(255, 255, 255, 0.5) !important;
+        text-align: center !important;
+    }
+    
+    .dashboards {
+        position: relative !important;
     }
     
     /* Services */
