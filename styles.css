@@ -729,7 +729,7 @@ div[class*="platform"] {
 }
 
 .nav-link {
-    color: #ccc;
+    color: #d1dce6;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -825,7 +825,7 @@ div[class*="platform"] {
 
 .hero-subtitle {
     font-size: 1.25rem;
-    color: #ccc;
+    color: #c8d4e0;
     margin-bottom: 3rem;
     line-height: 1.6;
 }
@@ -866,7 +866,7 @@ div[class*="platform"] {
 
 .comparison-title {
     font-size: 0.875rem;
-    color: #999;
+    color: #b3c7d9;
     margin-bottom: 0.25rem;
 }
 
@@ -890,7 +890,7 @@ div[class*="platform"] {
 
 .comparison-desc {
     font-size: 0.75rem;
-    color: #ccc;
+    color: #d1dce6;
     line-height: 1.3;
 }
 
@@ -1337,7 +1337,7 @@ div[class*="platform"] {
 
 .section-header p {
     font-size: 1.125rem;
-    color: #999;
+    color: #b3c7d9;
 }
 
 /* Hide mobile swipe hint on desktop */
@@ -1401,7 +1401,7 @@ div[class*="platform"] {
 }
 
 .service-card p {
-    color: #ccc;
+    color: #d1dce6;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
@@ -1472,7 +1472,7 @@ div[class*="platform"] {
 }
 
 .deliverables li {
-    color: #ccc;
+    color: #d1dce6;
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
@@ -1588,7 +1588,7 @@ div[class*="platform"] {
 }
 
 .feature-item p {
-    color: #ccc;
+    color: #d1dce6;
     font-size: 0.875rem;
     line-height: 1.5;
 }
@@ -1886,7 +1886,7 @@ div[class*="platform"] {
 }
 
 .step-content p {
-    color: #ccc;
+    color: #d1dce6;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -2044,7 +2044,7 @@ div[class*="platform"] {
 
 .tagline-underplayed {
     font-size: 1rem;
-    color: #999;
+    color: #b3c7d9;
     font-style: italic;
     margin-bottom: 0;
     opacity: 0.8;
@@ -2112,7 +2112,7 @@ div[class*="platform"] {
 }
 
 .cta-note small {
-    color: #999;
+    color: #b3c7d9;
     font-size: 0.75rem;
 }
 
@@ -2254,7 +2254,7 @@ div[class*="platform"] {
 
 .stat-desc {
     display: block;
-    color: #999;
+    color: #b3c7d9;
     font-size: 0.75rem;
     line-height: 1.3;
 }
@@ -2415,7 +2415,7 @@ div[class*="platform"] {
 }
 
 .hero-desc {
-    color: #ccc;
+    color: #d1dce6;
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 2rem;
@@ -2504,7 +2504,7 @@ div[class*="platform"] {
 }
 
 .diff-content span {
-    color: #999;
+    color: #b3c7d9;
     font-size: 0.9rem;
 }
 
@@ -2613,12 +2613,12 @@ div[class*="platform"] {
 }
 
 .period {
-    color: #999;
+    color: #b3c7d9;
     font-size: 0.9rem;
 }
 
 .timeline-content p {
-    color: #ccc;
+    color: #d1dce6;
     line-height: 1.5;
     margin-bottom: 1rem;
 }
@@ -2653,7 +2653,7 @@ div[class*="platform"] {
 }
 
 .cta-content p {
-    color: #ccc;
+    color: #d1dce6;
     font-size: 1.1rem;
     margin-bottom: 2rem;
 }
@@ -2928,6 +2928,64 @@ div[class*="platform"] {
     font-weight: 500;
 }
 
+/* About Page Styles */
+.about-hero {
+    padding: 8rem 0 4rem 0;
+    background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(0, 0, 20, 0.9));
+    position: relative;
+    z-index: 1;
+}
+
+.about-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.hero-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.hero-header .hero-subtitle {
+    font-size: 1.1rem;
+    color: #c8d4e0;
+    line-height: 1.5;
+}
+
+.professional-story,
+.achievement-overview,
+.professional-timeline,
+.about-cta {
+    padding: 4rem 0;
+    position: relative;
+    z-index: 1;
+}
+
+.story-intro h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.story-highlight .lead {
+    font-size: 1.2rem;
+    color: #d1dce6;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.cred-content .cred-desc {
+    color: #b3c7d9;
+    font-size: 0.9rem;
+}
+
 /* Floating CTA */
 .floating-cta {
     position: fixed;
@@ -3001,7 +3059,7 @@ div[class*="platform"] {
 }
 
 .footer-brand p {
-    color: #999;
+    color: #b3c7d9;
     font-size: 0.875rem;
     margin: 0;
 }
@@ -3012,7 +3070,7 @@ div[class*="platform"] {
 }
 
 .footer-links a {
-    color: #ccc;
+    color: #d1dce6;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -3028,7 +3086,7 @@ div[class*="platform"] {
 }
 
 .footer-bottom p {
-    color: #999;
+    color: #b3c7d9;
     font-size: 0.875rem;
 }
 
