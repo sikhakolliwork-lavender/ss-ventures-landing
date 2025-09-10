@@ -28,12 +28,12 @@ html {
         overflow: visible !important;
     }
     
-    /* Hero section fixes - Slightly more spacing */
+    /* Hero section fixes - Minimal spacing for partnership visibility */
     .hero {
-        padding: 1.5rem 0 8rem 0 !important;
+        padding: 1.5rem 0 1rem 0 !important; /* Reduced bottom padding from 8rem to 1rem */
         margin-top: 70px !important;
         min-height: auto !important;
-        margin-bottom: 4rem !important;
+        margin-bottom: 0 !important; /* Removed bottom margin */
     }
     
     .hero-container {
@@ -137,8 +137,8 @@ html {
     .hero-cta {
         flex-direction: column !important;
         gap: 1rem !important;
-        margin: 0 0 8rem 0 !important;
-        padding: 0.5rem 1rem 5rem 1rem !important;
+        margin: 0 !important; /* Removed massive bottom margin */
+        padding: 0.5rem 1rem 0.5rem 1rem !important; /* Removed massive bottom padding */
     }
     
     .cta-primary, .cta-secondary {
