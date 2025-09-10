@@ -1,48 +1,59 @@
-// Mobile hamburger menu functions
+// Modern Sidebar Menu Functions
 function toggleMobileMenu() {
-    console.log('Toggle mobile menu called');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (mobileMenu) {
-        mobileMenu.classList.toggle('open');
-        // Prevent body scroll when menu is open
-        if (mobileMenu.classList.contains('open')) {
-            document.body.style.overflow = 'hidden';
-        } else {
+    console.log('Toggle sidebar menu called');
+    const mobileSidebar = document.getElementById('mobileMenu');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    if (mobileSidebar && sidebarOverlay) {
+        const isOpen = mobileSidebar.classList.contains('open');
+        
+        if (isOpen) {
+            // Close sidebar
+            mobileSidebar.classList.remove('open');
+            sidebarOverlay.classList.remove('open');
             document.body.style.overflow = 'auto';
+        } else {
+            // Open sidebar
+            mobileSidebar.classList.add('open');
+            sidebarOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
         }
     }
 }
 
 function closeMobileMenu() {
-    console.log('Close mobile menu called');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (mobileMenu) {
-        mobileMenu.classList.remove('open');
+    console.log('Close sidebar menu called');
+    const mobileSidebar = document.getElementById('mobileMenu');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    
+    if (mobileSidebar && sidebarOverlay) {
+        mobileSidebar.classList.remove('open');
+        sidebarOverlay.classList.remove('open');
         document.body.style.overflow = 'auto';
     }
 }
 
-// Handle mobile menu item clicks with smooth scrolling
+// Handle sidebar navigation clicks with smooth scrolling
 function handleMobileMenuClick(event, target) {
     event.preventDefault();
     closeMobileMenu();
     
-    // Smooth scroll to section after menu closes
+    // Smooth scroll to section after sidebar closes
     setTimeout(() => {
         const section = document.querySelector(target);
         if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-    }, 300);
+    }, 400); // Increased delay for sidebar animation
 }
 
-// Close mobile menu when clicking outside
+// Close sidebar when clicking outside
 document.addEventListener('click', function(event) {
-    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileSidebar = document.getElementById('mobileMenu');
     const hamburger = document.querySelector('.hamburger-menu');
     
-    if (mobileMenu && hamburger && mobileMenu.classList.contains('open')) {
-        if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+    if (mobileSidebar && hamburger && mobileSidebar.classList.contains('open')) {
+        if (!mobileSidebar.contains(event.target) && !hamburger.contains(event.target)) {
             closeMobileMenu();
         }
     }
