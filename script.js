@@ -390,11 +390,7 @@ function typeWriter(element, text, speed = 100) {
     type();
 }
 
-// Mobile menu toggle (basic implementation)
-function toggleMobileMenu() {
-    const menu = document.querySelector('.nav-menu');
-    menu.classList.toggle('active');
-}
+// Note: toggleMobileMenu function is defined earlier in this file for sidebar functionality
 
 // Add some interactive hover effects
 document.addEventListener('DOMContentLoaded', function() {
