@@ -1868,10 +1868,10 @@ div[class*="platform"] {
     max-height: none !important;
 }
 
-/* Conversion-Optimized Profile Hero Card */
+/* Clean Profile Hero Card */
 .profile-hero-card {
     display: grid;
-    grid-template-columns: 300px 1fr 320px;
+    grid-template-columns: 300px 1fr 280px;
     gap: 3rem;
     padding: 2.5rem;
     background: linear-gradient(135deg, rgba(0, 212, 255, 0.05), rgba(0, 119, 255, 0.02));
@@ -1887,13 +1887,14 @@ div[class*="platform"] {
 .profile-hero-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: -1px;
+    left: -1px;
+    right: -1px;
     height: 4px;
-    background: linear-gradient(90deg, #00d4ff, #0077ff, #ff6b6b, #00d4ff);
-    background-size: 300% 100%;
-    animation: gradient-flow 4s ease-in-out infinite;
+    background: linear-gradient(90deg, #00d4ff, #0077ff, #00d4ff);
+    background-size: 200% 100%;
+    animation: gradient-flow 3s ease-in-out infinite;
+    border-radius: 25px 25px 0 0;
 }
 
 @keyframes gradient-flow {
@@ -1932,19 +1933,21 @@ div[class*="platform"] {
 
 .photo-badge {
     position: absolute;
-    bottom: -10px;
+    bottom: -8px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #00d4ff, #0077ff);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: #00d4ff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+    gap: 0.4rem;
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.15);
+    backdrop-filter: blur(10px);
 }
 
 .identity-text h3 {
@@ -2002,56 +2005,14 @@ div[class*="platform"] {
     font-weight: 500;
 }
 
-/* Right: Trust Signals + CTA */
-.trust-signals-cta {
+/* Right: Simple CTA */
+.simple-cta {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-}
-
-.social-proof {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 15px;
-    padding: 1.5rem;
-}
-
-.testimonial-preview {
-    margin-bottom: 1rem;
-}
-
-.stars {
-    color: #ffd700;
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.testimonial-preview p {
-    font-size: 0.9rem;
-    color: #e0e0e0;
-    font-style: italic;
-    margin-bottom: 0.5rem;
-    line-height: 1.4;
-}
-
-.client-name {
-    font-size: 0.8rem;
-    color: #999;
-    font-weight: 500;
-}
-
-.credentials-mini {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.cred-item {
-    font-size: 0.8rem;
-    color: #ccc;
-    display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 1.5rem;
+    text-align: center;
 }
 
 .cta-primary-hero {
@@ -3030,7 +2991,7 @@ div[class*="platform"] {
         justify-content: center;
     }
 
-    .trust-signals-cta {
+    .simple-cta {
         order: 3;
         grid-column: 1 / -1;
         max-width: 400px;
@@ -3231,7 +3192,7 @@ div[class*="platform"] {
         order: 2;
     }
 
-    .trust-signals-cta {
+    .simple-cta {
         order: 3;
     }
 
@@ -3261,10 +3222,6 @@ div[class*="platform"] {
 
     .achievement-number {
         font-size: 1.5rem !important;
-    }
-
-    .testimonial-preview p {
-        font-size: 0.85rem !important;
     }
 
     .cta-primary-hero {
