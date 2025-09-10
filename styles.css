@@ -2082,6 +2082,30 @@ div[class*="platform"] {
     background: linear-gradient(135deg, #0077ff, #00d4ff);
 }
 
+.cta-secondary-hero {
+    width: 100%;
+    background: transparent;
+    color: #00d4ff;
+    border: 2px solid rgba(0, 212, 255, 0.5);
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.cta-secondary-hero:hover {
+    background: rgba(0, 212, 255, 0.1);
+    border-color: #00d4ff;
+    transform: translateY(-2px);
+    color: #fff;
+}
+
 .cta-note {
     text-align: center;
     margin-top: 0.75rem;

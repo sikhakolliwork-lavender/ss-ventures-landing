@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Sravan Sikhakolli - Fractional Chief Data Officer | SS Ventures</title>
+    <meta name="description" content="Meet Sravan Sikhakolli, your Fractional CDO. Former OYO Revenue Manager with ₹500Cr+ impact, 130% ROI track record, and proven expertise in scaling data operations for startups.">
+    <link rel="stylesheet" href="styles.css?v=2025091003">
+    <link rel="stylesheet" href="enhanced-effects.css?v=2025091003">
+    <link rel="stylesheet" href="mobile-overhaul.css?v=2025091003">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
+</head>
+<body>
+    <!-- AI Particles Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="ssv_logo_v1.png" alt="SSV Logo" class="ssv-logo">
+                <span>Sikhakolli Sravan Ventures</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#experience" class="nav-link">Experience</a>
+                <a href="index.html#results" class="nav-link">Results</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="index.html#contact" class="nav-link cta-button">Get Started</a>
+            </div>
+            <div class="hamburger-menu" onclick="toggleMobileMenu()">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </div>
+        
+        <!-- Mobile Sidebar Menu -->
+        <div class="mobile-sidebar" id="mobileMenu">
+            <div class="sidebar-header">
+                <div class="sidebar-close" onclick="closeMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            
+            <div class="sidebar-content">
+                <div class="sidebar-nav">
+                    <a href="index.html#services" class="sidebar-item" onclick="handleMobileMenuClick(event, 'index.html#services')">
+                        <i class="fas fa-cogs"></i>
+                        <span>Services</span>
+                    </a>
+                    <a href="index.html#experience" class="sidebar-item" onclick="handleMobileMenuClick(event, 'index.html#experience')">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Experience</span>
+                    </a>
+                    <a href="index.html#results" class="sidebar-item" onclick="handleMobileMenuClick(event, 'index.html#results')">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Results</span>
+                    </a>
+                    <a href="about.html" class="sidebar-item">
+                        <i class="fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                </div>
+                
+                <div class="sidebar-cta">
+                    <a href="index.html#contact" class="sidebar-cta-button" onclick="handleMobileMenuClick(event, 'index.html#contact')">
+                        <span>Get Started</span>
+                        <i class="fas fa-rocket"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sidebar Overlay -->
+        <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeMobileMenu()"></div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <div class="hero-header" data-aos="fade-up">
+                    <h1>Meet Your <span class="gradient-text">Fractional Chief Data Officer</span></h1>
+                    <p class="hero-subtitle">The data leader who turns startup chaos into investor confidence</p>
+                </div>
+                
+                <!-- Profile Card -->
+                <div class="profile-hero-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="profile-photo-section">
+                        <div class="photo-container">
+                            <img src="sikhakolli_sravan.jpg" alt="Sikhakolli Sravan - Fractional Chief Data Officer" class="profile-photo">
+                            <div class="photo-badge">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Verified Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-content-section">
+                        <div class="identity-info">
+                            <h2>Sravan Sikhakolli</h2>
+                            <p class="tagline-underplayed">Turning startup data into gold</p>
+                        </div>
+                        
+                        <div class="experience-badges">
+                            <span class="exp-badge">Ex-OYO</span>
+                            <span class="exp-badge">Revenue Expert</span>
+                            <span class="exp-badge">Startup Advisor</span>
+                        </div>
+                        
+                        <div class="cta-section">
+                            <button class="cta-primary-hero" onclick="window.location.href='index.html#contact'">
+                                <span>Work With Me</span>
+                                <i class="fas fa-handshake"></i>
+                            </button>
+                            <div class="cta-note">
+                                <small>📞 Free 15-min strategy call • No commitment required</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Story Section -->
+    <section class="professional-story">
+        <div class="container">
+            <div class="story-content">
+                <div class="story-intro" data-aos="fade-up">
+                    <h2><span class="gradient-text">My Story:</span> From Corporate Analytics to Fractional Leadership</h2>
+                    <div class="story-highlight">
+                        <p class="lead">I've scaled data operations at unicorn startups, delivered 130% ROI on multi-million dollar budgets, and built the analytics infrastructure that helped teams raise successful funding rounds.</p>
+                    </div>
+                </div>
+                
+                <div class="current-highlight" data-aos="fade-up" data-aos-delay="100">
+                    <div class="highlight-icon">⚡</div>
+                    <div class="highlight-content">
+                        <strong>Currently leading data transformation at Saathi</strong>
+                        <p>Serving 5+ teams across India's largest social impact platform, earned "Champion" award for enterprise platform launch</p>
+                    </div>
+                </div>
+                
+                <div class="value-proposition" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Why Choose Fractional Over Full-Time?</h3>
+                    <div class="differentiator-grid">
+                        <div class="diff-item">
+                            <div class="diff-icon">⚡</div>
+                            <div class="diff-content">
+                                <strong>Immediate Impact</strong>
+                                <span>Start in 2 weeks, not 2+ months</span>
+                            </div>
+                        </div>
+                        <div class="diff-item">
+                            <div class="diff-icon">💰</div>
+                            <div class="diff-content">
+                                <strong>80% Cost Savings</strong>
+                                <span>No ₹50L+ salary + equity</span>
+                            </div>
+                        </div>
+                        <div class="diff-item">
+                            <div class="diff-icon">🎯</div>
+                            <div class="diff-content">
+                                <strong>Battle-Tested</strong>
+                                <span>Proven at OYO, Saathi scale</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section class="achievement-overview">
+        <div class="container">
+            <div class="stats-showcase">
+                <div class="quick-stats" data-aos="fade-up">
+                    <h3><i class="fas fa-chart-line"></i> Impact At a Glance</h3>
+                    <div class="stats-grid">
+                        <div class="quick-stat">
+                            <div class="stat-icon">💰</div>
+                            <div class="stat-info">
+                                <span class="stat-value">₹500Cr+</span>
+                                <span class="stat-desc">Revenue Impact</span>
+                            </div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="stat-icon">📈</div>
+                            <div class="stat-info">
+                                <span class="stat-value">130%</span>
+                                <span class="stat-desc">Average ROI</span>
+                            </div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="stat-icon">🏢</div>
+                            <div class="stat-info">
+                                <span class="stat-value">50+</span>
+                                <span class="stat-desc">Teams Enabled</span>
+                            </div>
+                        </div>
+                        <div class="quick-stat">
+                            <div class="stat-icon">🏆</div>
+                            <div class="stat-info">
+                                <span class="stat-value">5</span>
+                                <span class="stat-desc">Industry Awards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="credential-showcase" data-aos="fade-up" data-aos-delay="100">
+                    <h3><i class="fas fa-medal"></i> Recognition & Awards</h3>
+                    <div class="credentials-stack">
+                        <div class="credential-item">
+                            <div class="cred-icon">🏆</div>
+                            <div class="cred-content">
+                                <span class="cred-title">Saathi Champion 2025</span>
+                                <span class="cred-desc">Enterprise platform launch excellence</span>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="cred-icon">🎯</div>
+                            <div class="cred-content">
+                                <span class="cred-title">OYO Big Impact 2023</span>
+                                <span class="cred-desc">130% ROI on ₹40Cr budget delivery</span>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="cred-icon">⭐</div>
+                            <div class="cred-content">
+                                <span class="cred-title">Above & Beyond Q1-Q2</span>
+                                <span class="cred-desc">Exceptional performance recognition</span>
+                            </div>
+                        </div>
+                        <div class="credential-item">
+                            <div class="cred-icon">🚀</div>
+                            <div class="cred-content">
+                                <span class="cred-title">Go Getter Award 2021</span>
+                                <span class="cred-desc">Innovation and execution excellence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Timeline -->
+    <section class="professional-timeline">
+        <div class="container">
+            <div class="timeline-header" data-aos="fade-up">
+                <h2><i class="fas fa-briefcase"></i> Professional <span class="gradient-text">Track Record</span></h2>
+                <p>From startup analyst to fractional C-suite executive — a proven path of scaling data operations</p>
+            </div>
+            
+            <div class="experience-timeline" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-grid">
+                    <div class="timeline-item current">
+                        <div class="timeline-marker">
+                            <div class="marker-dot current"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>Head of Growth Analytics</h4>
+                                <div class="company-period">
+                                    <span class="company">Saathi</span>
+                                    <span class="period">Dec 2024 – Present</span>
+                                </div>
+                            </div>
+                            <p>Enterprise platform serving 5+ teams, 30% metric improvement, "Champion" award for data transformation</p>
+                            <div class="impact-tags">
+                                <span class="tag">Enterprise Scale</span>
+                                <span class="tag">30% Growth</span>
+                                <span class="tag">Award Winner</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>Revenue Manager</h4>
+                                <div class="company-period">
+                                    <span class="company">OYO Hotels</span>
+                                    <span class="period">Jul 2023 – Nov 2024</span>
+                                </div>
+                            </div>
+                            <p>130% ROI on ₹40Cr budget across Asia, US, UK. Led team of 5, reduced partner churn 30%</p>
+                            <div class="impact-tags">
+                                <span class="tag">130% ROI</span>
+                                <span class="tag">₹40Cr Budget</span>
+                                <span class="tag">Global Scale</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">
+                            <div class="marker-dot"></div>
+                        </div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h4>Senior Business Analyst</h4>
+                                <div class="company-period">
+                                    <span class="company">OYO</span>
+                                    <span class="period">Jul 2022 – Jun 2023</span>
+                                </div>
+                            </div>
+                            <p>Built data framework cutting operational costs 80%, improved fraud detection 20%</p>
+                            <div class="impact-tags">
+                                <span class="tag">80% Cost Cut</span>
+                                <span class="tag">Fraud Detection</span>
+                                <span class="tag">Framework Builder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Ready to Scale Your Data Operations?</h2>
+                <p class="cta-subtitle">Join companies that achieved 130% ROI and 30% faster growth through proven data strategies</p>
+                
+                <div class="cta-buttons">
+                    <button class="cta-primary" onclick="window.location.href='index.html#contact'">
+                        <span>Work With Me Directly</span>
+                        <i class="fas fa-handshake"></i>
+                    </button>
+                    <button class="cta-secondary" onclick="window.location.href='index.html'">
+                        <span>View Services</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                
+                <div class="cta-note">
+                    <small>📞 Free 15-min strategy call • No commitment required</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="ssv_logo_v1.png" alt="SSV Logo" class="footer-logo">
+                    <h4>Sikhakolli Sravan Ventures</h4>
+                    <p>Fractional Chief Data Officer Services</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Services</h4>
+                        <ul>
+                            <a href="index.html#services">Analytics Setup</a>
+                            <a href="index.html#services">Growth Metrics</a>
+                            <a href="index.html#services">Data Strategy</a>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <a href="about.html">About Founder</a>
+                            <a href="index.html#experience">Experience</a>
+                            <a href="index.html#results">Results</a>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <ul>
+                            <a href="index.html#contact">Get Started</a>
+                            <a href="mailto:sravan@ssventures.in">Email</a>
+                            <a href="tel:+919876543210">Phone</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sikhakolli Sravan Ventures. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
