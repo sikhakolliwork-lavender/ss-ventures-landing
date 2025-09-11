@@ -256,8 +256,8 @@ function scrollToSection(sectionId) {
 
 // Google Forms Configuration
 const GOOGLE_FORMS_CONFIG = {
-    // Your actual Google Form submission URL
-    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScf47mEpPN1TOI850Upa-7_4_NWuY-DgeEVEpLNkcfG45yqQ/formResponse',
+    // Your actual Google Form submission URL - reconstructed
+    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScf47mEpPN1T0I850Upa-7_4_NWuY-DgeEVEpLNkcfG45yqQ/formResponse',
     // Entry IDs from your Google Form (some visible, others need to be found)
     fields: {
         name: 'entry.385658026',        // Name field
@@ -288,19 +288,45 @@ async function submitToGoogleForms(data) {
     }
     
     try {
-        // Submit to Google Forms (no-cors mode to avoid CORS issues)
+        // First try without no-cors to see the actual error
+        console.log('Attempting form submission to:', GOOGLE_FORMS_CONFIG.formUrl);
         const response = await fetch(GOOGLE_FORMS_CONFIG.formUrl, {
             method: 'POST',
-            mode: 'no-cors',
             body: formData
         });
         
-        console.log('Form submission attempt completed');
+        console.log('Response status:', response.status);
+        console.log('Response ok:', response.ok);
         
-        // Google Forms submission always appears successful in no-cors mode
-        return Promise.resolve();
+        if (response.ok) {
+            console.log('Form submission successful!');
+            return Promise.resolve();
+        } else {
+            console.error('Form submission failed with status:', response.status);
+            const errorText = await response.text();
+            console.error('Error response:', errorText);
+            return Promise.reject(new Error(`HTTP ${response.status}: ${errorText}`));
+        }
     } catch (error) {
         console.error('Google Forms submission error:', error);
+        
+        // If CORS error, try with no-cors mode as fallback
+        if (error.name === 'TypeError' && error.message.includes('CORS')) {
+            console.log('CORS error detected, trying with no-cors mode...');
+            try {
+                const fallbackResponse = await fetch(GOOGLE_FORMS_CONFIG.formUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                });
+                console.log('Fallback no-cors submission completed');
+                return Promise.resolve();
+            } catch (fallbackError) {
+                console.error('Fallback submission also failed:', fallbackError);
+                return Promise.reject(fallbackError);
+            }
+        }
+        
         return Promise.reject(error);
     }
 }
