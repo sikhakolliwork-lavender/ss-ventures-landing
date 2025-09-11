@@ -287,21 +287,22 @@ function mapChallengeValue(value) {
 
 // Submit form data to Google Forms
 async function submitToGoogleForms(data) {
-    const formData = new FormData();
-    
     // Debug: Log the data being submitted
     console.log('Submitting form data:', data);
     console.log('Google Forms config:', GOOGLE_FORMS_CONFIG);
     
-    // Map form data to Google Forms entry IDs
-    formData.append(GOOGLE_FORMS_CONFIG.fields.name, data.name);
-    formData.append(GOOGLE_FORMS_CONFIG.fields.email, data.email);
-    formData.append(GOOGLE_FORMS_CONFIG.fields.company, data.company);
-    formData.append(GOOGLE_FORMS_CONFIG.fields.challenge, mapChallengeValue(data.challenge));
+    // Create URL-encoded form data (alternative approach)
+    const formParams = new URLSearchParams();
+    formParams.append(GOOGLE_FORMS_CONFIG.fields.name, data.name);
+    formParams.append(GOOGLE_FORMS_CONFIG.fields.email, data.email);
+    formParams.append(GOOGLE_FORMS_CONFIG.fields.company, data.company);
+    formParams.append(GOOGLE_FORMS_CONFIG.fields.challenge, mapChallengeValue(data.challenge));
+    formParams.append('submit', 'Submit');
+    formParams.append('usp', 'pp_url');
     
-    // Debug: Log FormData contents
-    console.log('FormData being sent:');
-    for (let [key, value] of formData.entries()) {
+    // Debug: Log form parameters
+    console.log('Form parameters being sent:');
+    for (let [key, value] of formParams.entries()) {
         console.log(key, '=', value);
     }
     
@@ -310,20 +311,44 @@ async function submitToGoogleForms(data) {
         const formUrl = GOOGLE_FORMS_CONFIG.getFormUrl();
         console.log('Submitting to Google Forms URL:', formUrl);
         
-        // Use no-cors mode directly since Google Forms blocks CORS
+        // Try URL-encoded approach first
         const response = await fetch(formUrl, {
             method: 'POST',
-            mode: 'no-cors', // Required for Google Forms
-            body: formData
+            mode: 'no-cors',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: formParams.toString()
         });
         
-        console.log('Form submission completed (no-cors mode)');
-        // In no-cors mode, we can't check response status, but if no error thrown, it likely worked
+        console.log('Form submission completed (URL-encoded, no-cors mode)');
         return Promise.resolve();
         
     } catch (error) {
         console.error('Google Forms submission error:', error);
-        return Promise.reject(error);
+        
+        // Fallback to FormData approach
+        console.log('Trying fallback FormData approach...');
+        try {
+            const formData = new FormData();
+            formData.append(GOOGLE_FORMS_CONFIG.fields.name, data.name);
+            formData.append(GOOGLE_FORMS_CONFIG.fields.email, data.email);
+            formData.append(GOOGLE_FORMS_CONFIG.fields.company, data.company);
+            formData.append(GOOGLE_FORMS_CONFIG.fields.challenge, mapChallengeValue(data.challenge));
+            formData.append('submit', 'Submit');
+            
+            const fallbackResponse = await fetch(GOOGLE_FORMS_CONFIG.getFormUrl(), {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            });
+            
+            console.log('Fallback FormData submission completed');
+            return Promise.resolve();
+        } catch (fallbackError) {
+            console.error('Fallback submission also failed:', fallbackError);
+            return Promise.reject(fallbackError);
+        }
     }
 }
 
