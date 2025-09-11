@@ -254,6 +254,77 @@ function scrollToSection(sectionId) {
     }
 }
 
+// Google Forms Configuration
+const GOOGLE_FORMS_CONFIG = {
+    // Your actual Google Form submission URL
+    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScf47mEpPN1TOI850Upa-7_4_NWuY-DgeEVEpLNkcfG45yqQ/formResponse',
+    // Entry IDs from your Google Form (some visible, others need to be found)
+    fields: {
+        name: 'entry.385658026',        // Name field
+        email: 'entry.486887375',       // Email field  
+        company: 'entry.1389831910',    // Company field
+        challenge: 'entry.2144005445'   // Challenge dropdown field
+    }
+};
+
+// Submit form data to Google Forms
+async function submitToGoogleForms(data) {
+    const formData = new FormData();
+    
+    // Map form data to Google Forms entry IDs
+    formData.append(GOOGLE_FORMS_CONFIG.fields.name, data.name);
+    formData.append(GOOGLE_FORMS_CONFIG.fields.email, data.email);
+    formData.append(GOOGLE_FORMS_CONFIG.fields.company, data.company);
+    formData.append(GOOGLE_FORMS_CONFIG.fields.challenge, data.challenge);
+    
+    try {
+        // Submit to Google Forms (no-cors mode to avoid CORS issues)
+        await fetch(GOOGLE_FORMS_CONFIG.formUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+        });
+        
+        // Google Forms submission always appears successful in no-cors mode
+        return Promise.resolve();
+    } catch (error) {
+        console.error('Google Forms submission error:', error);
+        return Promise.reject(error);
+    }
+}
+
+// Show thank you message
+function showThankYouMessage() {
+    // Create elegant modal instead of alert
+    const modal = document.createElement('div');
+    modal.className = 'thank-you-modal';
+    modal.innerHTML = `
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h3>Thank You!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Your request has been submitted successfully.</p>
+                <p><strong>I'll get back to you within 2 hours.</strong></p>
+                <p>Check your email for confirmation details.</p>
+            </div>
+            <button class="modal-close" onclick="this.parentElement.parentElement.remove()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (modal.parentElement) {
+            modal.remove();
+        }
+    }, 5000);
+}
+
 // Calendar booking function
 function openCalendar() {
     // In a real implementation, this would integrate with a calendar service
@@ -284,32 +355,36 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Simulate form submission (replace with actual API call)
-            setTimeout(() => {
-                // Show success message
-                submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                submitBtn.classList.add('success');
-                
-                // Reset form after delay
-                setTimeout(() => {
-                    form.reset();
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('success');
+            // Submit to Google Forms
+            submitToGoogleForms(data)
+                .then(() => {
+                    // Show success message
+                    submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                    submitBtn.classList.add('success');
                     
-                    // Show thank you message
-                    alert('Thank you for your interest! I\'ll get back to you within 2 hours.');
-                }, 2000);
-            }, 2000);
-            
-            // In a real implementation, you would send data to your server:
-            // fetch('/api/contact', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(data)
-            // });
+                    // Reset form after delay
+                    setTimeout(() => {
+                        form.reset();
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('success');
+                        
+                        // Show thank you message
+                        showThankYouMessage();
+                    }, 2000);
+                })
+                .catch((error) => {
+                    console.error('Form submission error:', error);
+                    // Show error message
+                    submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Try Again';
+                    submitBtn.classList.add('error');
+                    
+                    setTimeout(() => {
+                        submitBtn.innerHTML = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('error');
+                    }, 3000);
+                });
         });
     }
 });
@@ -330,7 +405,10 @@ window.addEventListener('scroll', function() {
     }
     
     // Show floating CTA after scrolling past hero section
-    if (scrollY > 300) {
+    // On mobile, always show CTA for better conversion
+    const isMobile = window.innerWidth <= 640;
+    
+    if (isMobile || scrollY > 300) {
         floatingCta.classList.add('visible');
     } else {
         floatingCta.classList.remove('visible');
@@ -541,4 +619,22 @@ document.addEventListener('click', function(e) {
     setTimeout(() => {
         ripple.remove();
     }, 600);
+});
+
+// Mobile CTA Initialization - Ensure floating CTA is always visible on mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const floatingCta = document.getElementById('floatingCta');
+    const isMobile = window.innerWidth <= 640;
+    
+    if (isMobile && floatingCta) {
+        floatingCta.classList.add('visible');
+    }
+    
+    // Also handle window resize to maintain visibility
+    window.addEventListener('resize', function() {
+        const isMobileNow = window.innerWidth <= 640;
+        if (isMobileNow && floatingCta) {
+            floatingCta.classList.add('visible');
+        }
+    });
 });
