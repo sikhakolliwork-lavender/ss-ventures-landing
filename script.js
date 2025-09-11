@@ -271,19 +271,31 @@ const GOOGLE_FORMS_CONFIG = {
 async function submitToGoogleForms(data) {
     const formData = new FormData();
     
+    // Debug: Log the data being submitted
+    console.log('Submitting form data:', data);
+    console.log('Google Forms config:', GOOGLE_FORMS_CONFIG);
+    
     // Map form data to Google Forms entry IDs
     formData.append(GOOGLE_FORMS_CONFIG.fields.name, data.name);
     formData.append(GOOGLE_FORMS_CONFIG.fields.email, data.email);
     formData.append(GOOGLE_FORMS_CONFIG.fields.company, data.company);
     formData.append(GOOGLE_FORMS_CONFIG.fields.challenge, data.challenge);
     
+    // Debug: Log FormData contents
+    console.log('FormData being sent:');
+    for (let [key, value] of formData.entries()) {
+        console.log(key, '=', value);
+    }
+    
     try {
         // Submit to Google Forms (no-cors mode to avoid CORS issues)
-        await fetch(GOOGLE_FORMS_CONFIG.formUrl, {
+        const response = await fetch(GOOGLE_FORMS_CONFIG.formUrl, {
             method: 'POST',
             mode: 'no-cors',
             body: formData
         });
+        
+        console.log('Form submission attempt completed');
         
         // Google Forms submission always appears successful in no-cors mode
         return Promise.resolve();
@@ -619,6 +631,43 @@ document.addEventListener('click', function(e) {
     setTimeout(() => {
         ripple.remove();
     }, 600);
+});
+
+// Test function to verify Google Forms entry IDs
+function testGoogleFormsSubmission() {
+    const testData = {
+        name: 'Test User',
+        email: 'test@example.com',
+        company: 'Test Company',
+        challenge: 'lack-insights'
+    };
+    
+    console.log('Testing Google Forms submission with test data...');
+    submitToGoogleForms(testData)
+        .then(() => console.log('Test submission completed'))
+        .catch(err => console.error('Test submission failed:', err));
+}
+
+// Add test button to page (temporary for debugging)
+document.addEventListener('DOMContentLoaded', function() {
+    // Add test button for debugging
+    const testButton = document.createElement('button');
+    testButton.innerHTML = '🧪 Test Google Forms';
+    testButton.style.cssText = `
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 10000;
+        background: #ff6b6b;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+    `;
+    testButton.onclick = testGoogleFormsSubmission;
+    document.body.appendChild(testButton);
 });
 
 // Mobile CTA Initialization - Ensure floating CTA is always visible on mobile
