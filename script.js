@@ -254,26 +254,21 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Google Forms Configuration - Robust approach
-const GOOGLE_FORMS_CONFIG = {
-    // Construct URL parts separately to avoid encoding issues
-    baseUrl: 'https://docs.google.com/forms/d/',
-    formId: '1FAIpQLScf47mEpPN1TOI850Upa-7__4_NWuY-DgeEVEpLNkcfG45yqQ',
-    endpoint: '/formResponse',
-    // Entry IDs from your Google Form (verified from actual form)
+// Formspree Configuration - Simple and reliable
+const FORMSPREE_CONFIG = {
+    // You'll get this endpoint after signing up at formspree.io
+    // Format: https://formspree.io/f/YOUR_FORM_ID
+    endpoint: 'https://formspree.io/f/YOUR_FORM_ID', // Replace YOUR_FORM_ID after signup
+    // Field names for Formspree (much simpler than Google Forms)
     fields: {
-        name: 'entry.1261661959',       // Name field
-        email: 'entry.767223939',       // Work Email field  
-        company: 'entry.366821035',     // Company Name field
-        challenge: 'entry.1662309986'   // Data Challenge dropdown field
-    },
-    // Get complete URL
-    getFormUrl: function() {
-        return this.baseUrl + this.formId + this.endpoint;
+        name: 'name',           // Standard HTML name attribute
+        email: 'email',         // Standard HTML email attribute  
+        company: 'company',     // Custom field name
+        challenge: 'challenge'  // Custom field name
     }
 };
 
-// Map form select values to Google Form option text
+// Map form select values to user-friendly text
 function mapChallengeValue(value) {
     const challengeMap = {
         'lack-insights': 'Lack of insights',
@@ -285,54 +280,40 @@ function mapChallengeValue(value) {
     return challengeMap[value] || value;
 }
 
-// Submit form data to Google Forms
-async function submitToGoogleForms(data) {
-    // Create URL-encoded form data for Google Forms submission
-    const formParams = new URLSearchParams();
-    formParams.append(GOOGLE_FORMS_CONFIG.fields.name, data.name);
-    formParams.append(GOOGLE_FORMS_CONFIG.fields.email, data.email);
-    formParams.append(GOOGLE_FORMS_CONFIG.fields.company, data.company);
-    formParams.append(GOOGLE_FORMS_CONFIG.fields.challenge, mapChallengeValue(data.challenge));
-    
+// Submit form data to Formspree
+async function submitToFormspree(data) {
     try {
-        // Submit to Google Forms using URL-encoded data
-        const formUrl = GOOGLE_FORMS_CONFIG.getFormUrl();
-        const response = await fetch(formUrl, {
+        // Create form data for Formspree submission
+        const formData = new FormData();
+        formData.append(FORMSPREE_CONFIG.fields.name, data.name);
+        formData.append(FORMSPREE_CONFIG.fields.email, data.email);
+        formData.append(FORMSPREE_CONFIG.fields.company, data.company);
+        formData.append(FORMSPREE_CONFIG.fields.challenge, mapChallengeValue(data.challenge));
+        
+        // Add additional metadata
+        formData.append('_subject', 'New Lead from Website');
+        formData.append('_replyto', data.email);
+        
+        const response = await fetch(FORMSPREE_CONFIG.endpoint, {
             method: 'POST',
-            mode: 'no-cors',
+            body: formData,
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: formParams.toString()
+                'Accept': 'application/json'
+            }
         });
         
-        return Promise.resolve();
+        if (response.ok) {
+            console.log('Form submitted successfully to Formspree');
+            return Promise.resolve();
+        } else {
+            const errorData = await response.json();
+            console.error('Formspree submission error:', errorData);
+            return Promise.reject(new Error(errorData.message || 'Submission failed'));
+        }
         
     } catch (error) {
-        console.error('Google Forms submission error:', error);
-        
-        // Fallback to FormData approach
-        console.log('Trying fallback FormData approach...');
-        try {
-            const formData = new FormData();
-            formData.append(GOOGLE_FORMS_CONFIG.fields.name, data.name);
-            formData.append(GOOGLE_FORMS_CONFIG.fields.email, data.email);
-            formData.append(GOOGLE_FORMS_CONFIG.fields.company, data.company);
-            formData.append(GOOGLE_FORMS_CONFIG.fields.challenge, mapChallengeValue(data.challenge));
-            formData.append('submit', 'Submit');
-            
-            const fallbackResponse = await fetch(GOOGLE_FORMS_CONFIG.getFormUrl(), {
-                method: 'POST',
-                mode: 'no-cors',
-                body: formData
-            });
-            
-            console.log('Fallback FormData submission completed');
-            return Promise.resolve();
-        } catch (fallbackError) {
-            console.error('Fallback submission also failed:', fallbackError);
-            return Promise.reject(fallbackError);
-        }
+        console.error('Formspree submission error:', error);
+        return Promise.reject(error);
     }
 }
 
@@ -398,8 +379,8 @@ document.addEventListener('DOMContentLoaded', function() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Submit to Google Forms
-            submitToGoogleForms(data)
+            // Submit to Formspree
+            submitToFormspree(data)
                 .then(() => {
                     // Show success message
                     submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
