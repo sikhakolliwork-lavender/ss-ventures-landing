@@ -287,11 +287,7 @@ function mapChallengeValue(value) {
 
 // Submit form data to Google Forms
 async function submitToGoogleForms(data) {
-    // Debug: Log the data being submitted
-    console.log('Submitting form data:', data);
-    console.log('Google Forms config:', GOOGLE_FORMS_CONFIG);
-    
-    // Create URL-encoded form data (alternative approach)
+    // Create URL-encoded form data for Google Forms submission
     const formParams = new URLSearchParams();
     formParams.append(GOOGLE_FORMS_CONFIG.fields.name, data.name);
     formParams.append(GOOGLE_FORMS_CONFIG.fields.email, data.email);
@@ -300,18 +296,9 @@ async function submitToGoogleForms(data) {
     formParams.append('submit', 'Submit');
     formParams.append('usp', 'pp_url');
     
-    // Debug: Log form parameters
-    console.log('Form parameters being sent:');
-    for (let [key, value] of formParams.entries()) {
-        console.log(key, '=', value);
-    }
-    
     try {
-        // Get the complete form URL
+        // Submit to Google Forms using URL-encoded data
         const formUrl = GOOGLE_FORMS_CONFIG.getFormUrl();
-        console.log('Submitting to Google Forms URL:', formUrl);
-        
-        // Try URL-encoded approach first
         const response = await fetch(formUrl, {
             method: 'POST',
             mode: 'no-cors',
@@ -321,7 +308,6 @@ async function submitToGoogleForms(data) {
             body: formParams.toString()
         });
         
-        console.log('Form submission completed (URL-encoded, no-cors mode)');
         return Promise.resolve();
         
     } catch (error) {
@@ -680,42 +666,7 @@ document.addEventListener('click', function(e) {
     }, 600);
 });
 
-// Test function to verify Google Forms entry IDs
-function testGoogleFormsSubmission() {
-    const testData = {
-        name: 'Test User',
-        email: 'test@example.com',
-        company: 'Test Company',
-        challenge: 'Lack of insights'  // Use exact text from Google Form options
-    };
-    
-    console.log('Testing Google Forms submission with test data...');
-    submitToGoogleForms(testData)
-        .then(() => console.log('Test submission completed'))
-        .catch(err => console.error('Test submission failed:', err));
-}
-
-// Add test button to page (temporary for debugging)
-document.addEventListener('DOMContentLoaded', function() {
-    // Add test button for debugging
-    const testButton = document.createElement('button');
-    testButton.innerHTML = '🧪 Test Google Forms';
-    testButton.style.cssText = `
-        position: fixed;
-        top: 10px;
-        left: 10px;
-        z-index: 10000;
-        background: #ff6b6b;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 12px;
-    `;
-    testButton.onclick = testGoogleFormsSubmission;
-    document.body.appendChild(testButton);
-});
+// Google Forms integration verified and working - debug code removed
 
 // Mobile CTA Initialization - Ensure floating CTA is always visible on mobile
 document.addEventListener('DOMContentLoaded', function() {
