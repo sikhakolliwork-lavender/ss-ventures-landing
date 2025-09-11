@@ -260,18 +260,30 @@ const GOOGLE_FORMS_CONFIG = {
     baseUrl: 'https://docs.google.com/forms/d/e/',
     formId: '1FAIpQLScf47mEpPN1TOI850Upa-7__4_NWuY-DgeEVEpLNkcfG45yqQ',
     endpoint: '/formResponse',
-    // Entry IDs from your Google Form
+    // Entry IDs from your Google Form (verified from actual form)
     fields: {
-        name: 'entry.385658026',        // Name field
-        email: 'entry.486887375',       // Email field  
-        company: 'entry.1389831910',    // Company field
-        challenge: 'entry.2144005445'   // Challenge dropdown field
+        name: 'entry.1261661959',       // Name field
+        email: 'entry.767223939',       // Work Email field  
+        company: 'entry.366821035',     // Company Name field
+        challenge: 'entry.1662309986'   // Data Challenge dropdown field
     },
     // Get complete URL
     getFormUrl: function() {
         return this.baseUrl + this.formId + this.endpoint;
     }
 };
+
+// Map form select values to Google Form option text
+function mapChallengeValue(value) {
+    const challengeMap = {
+        'lack-insights': 'Lack of insights',
+        'manual-processes': 'Too many processes',
+        'data-silos': 'Data scattered across systems',
+        'no-roi': 'Low ROI from data spend',
+        'scaling-issues': 'Scaling challenges'
+    };
+    return challengeMap[value] || value;
+}
 
 // Submit form data to Google Forms
 async function submitToGoogleForms(data) {
@@ -285,7 +297,7 @@ async function submitToGoogleForms(data) {
     formData.append(GOOGLE_FORMS_CONFIG.fields.name, data.name);
     formData.append(GOOGLE_FORMS_CONFIG.fields.email, data.email);
     formData.append(GOOGLE_FORMS_CONFIG.fields.company, data.company);
-    formData.append(GOOGLE_FORMS_CONFIG.fields.challenge, data.challenge);
+    formData.append(GOOGLE_FORMS_CONFIG.fields.challenge, mapChallengeValue(data.challenge));
     
     // Debug: Log FormData contents
     console.log('FormData being sent:');
@@ -649,7 +661,7 @@ function testGoogleFormsSubmission() {
         name: 'Test User',
         email: 'test@example.com',
         company: 'Test Company',
-        challenge: 'lack-insights'
+        challenge: 'Lack of insights'  // Use exact text from Google Form options
     };
     
     console.log('Testing Google Forms submission with test data...');
