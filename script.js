@@ -293,8 +293,6 @@ async function submitToGoogleForms(data) {
     formParams.append(GOOGLE_FORMS_CONFIG.fields.email, data.email);
     formParams.append(GOOGLE_FORMS_CONFIG.fields.company, data.company);
     formParams.append(GOOGLE_FORMS_CONFIG.fields.challenge, mapChallengeValue(data.challenge));
-    formParams.append('submit', 'Submit');
-    formParams.append('usp', 'pp_url');
     
     try {
         // Submit to Google Forms using URL-encoded data
