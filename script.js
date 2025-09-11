@@ -256,8 +256,8 @@ function scrollToSection(sectionId) {
 
 // Google Forms Configuration
 const GOOGLE_FORMS_CONFIG = {
-    // Your actual Google Form submission URL - reconstructed
-    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScf47mEpPN1T0I850Upa-7_4_NWuY-DgeEVEpLNkcfG45yqQ/formResponse',
+    // Your actual Google Form submission URL - corrected with proper form ID
+    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScf47mEpPN1TOI850Upa-7__4_NWuY-DgeEVEpLNkcfG45yqQ/formResponse',
     // Entry IDs from your Google Form (some visible, others need to be found)
     fields: {
         name: 'entry.385658026',        // Name field
