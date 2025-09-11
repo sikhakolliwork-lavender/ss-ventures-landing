@@ -258,7 +258,7 @@ function scrollToSection(sectionId) {
 const GOOGLE_FORMS_CONFIG = {
     // Construct URL parts separately to avoid encoding issues
     baseUrl: 'https://docs.google.com/forms/d/',
-    formId: '18Nae-pDdF0izCgPHTQpxxZJT346NduUV3P1d7GmeSTY',
+    formId: '1FAIpQLScf47mEpPN1TOI850Upa-7__4_NWuY-DgeEVEpLNkcfG45yqQ',
     endpoint: '/formResponse',
     // Entry IDs from your Google Form (verified from actual form)
     fields: {
