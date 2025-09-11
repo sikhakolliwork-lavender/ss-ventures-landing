@@ -258,7 +258,7 @@ function scrollToSection(sectionId) {
 const FORMSPREE_CONFIG = {
     // You'll get this endpoint after signing up at formspree.io
     // Format: https://formspree.io/f/YOUR_FORM_ID
-    endpoint: 'https://formspree.io/f/YOUR_FORM_ID', // Replace YOUR_FORM_ID after signup
+    endpoint: 'https://formspree.io/f/xwpnzknw', // Your active Formspree form
     // Field names for Formspree (much simpler than Google Forms)
     fields: {
         name: 'name',           // Standard HTML name attribute
